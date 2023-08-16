@@ -1,0 +1,530 @@
+Task: Explore in Google and Make a document :
+
+1. What is data concatination in pandas ?
+Use pandas. concat() to concatenate/merge two or multiple pandas DataFrames across rows or columns. When you concat() two pandas DataFrames on rows, it creates a new Dataframe containing all rows of two DataFrames basically it does append one DataFrame with another.
+
+2. Types of data concatination in pandas?
+Concatenate pandas objects along a particular axis.
+
+Allows optional set logic along the other axes.
+
+Can also add a layer of hierarchical indexing on the concatenation axis, which may be useful if the labels are the same (or overlapping) on the passed axis number.
+
+3. What are the functions available for data concatination/append in pandas?
+The pandas. concat() function does all the heavy lifting of performing concatenation operations along with an axis of Pandas objects while performing optional set logic (union or intersection) of the indexes (if any) on the other axes.
+
+
+Task: create a program
+Q1>Create and import file
+1. Create boys Boysfriend_names.xls file and import file in spyder (atleast 10 names, columns are FriendName,Quality) ,
+import pandas as pd
+
+bf=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\friends b&g.xlsx")
+
+bf
+Out[3]: 
+    bf names      quality
+0    santosh       active
+1      anwar     talktive
+2     dinesh       silent
+3  parmaatma         cool
+4      khaja  intelligent
+5      imran    sensitive
+6      razak        smart
+7       jabi        anger
+8     kalaam       dancer
+9     roshan      foolish
+2. Create girls Girlsfriend_names.xls file and import file in spyder (atleast 10 names, columns are FriendName,Quality),
+gf=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\friends b&g.xlsx",sheet_name="Sheet2")
+
+gf
+Out[7]: 
+  gf names      quality
+0  shabana      stylish
+1  jaisree       active
+2   anusha     talktive
+3  parveen       silent
+4   gowsia      foolish
+5    divya  intelligent
+6    afzal    sensitive
+7   geetha        smart
+8  haarika        anger
+9  kranthi   aggressive
+
+3. Append two dataframes and print data.
+df_append=pd.concat([bf,gf],axis=0,ignore_index='true')
+
+df_append
+Out[15]: 
+     bf names      quality gf names
+0     santosh       active      NaN
+1       anwar     talktive      NaN
+2      dinesh       silent      NaN
+3   parmaatma         cool      NaN
+4       khaja  intelligent      NaN
+5       imran    sensitive      NaN
+6       razak        smart      NaN
+7        jabi        anger      NaN
+8      kalaam       dancer      NaN
+9      roshan      foolish      NaN
+10        NaN      stylish  shabana
+11        NaN       active  jaisree
+12        NaN     talktive   anusha
+13        NaN       silent  parveen
+14        NaN      foolish   gowsia
+15        NaN  intelligent    divya
+16        NaN    sensitive    afzal
+17        NaN        smart   geetha
+18        NaN        anger  haarika
+19        NaN   aggressive  kranthi
+
+[or]
+
+df_append=pd.concat([bf,gf],axis=1)
+
+df_append
+Out[17]: 
+    bf names      quality gf names      quality
+0    santosh       active  shabana      stylish
+1      anwar     talktive  jaisree       active
+2     dinesh       silent   anusha     talktive
+3  parmaatma         cool  parveen       silent
+4      khaja  intelligent   gowsia      foolish
+5      imran    sensitive    divya  intelligent
+6      razak        smart    afzal    sensitive
+7       jabi        anger   geetha        smart
+8     kalaam       dancer  haarika        anger
+9     roshan      foolish  kranthi   aggressive
+
+
+
+Q2>Create and import file
+1. Create boys Boysfriend_names.xls file  (atleast 10 names, columns are boysFriendName,Quality) ,
+2. Create girls Girlsfriend_names.xls file  (atleast 10 names, columns are GirlsFriendName,Quality),
+3. Append two dataframes and print data.
+
+Q3>Create and import file
+1. Create a father side fatherfamily_members.xls file and import file in spyder  (atleast 5 names, columns are FamilyMemberName*Relation)
+fs=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\f&m.xlsx")
+
+fs
+Out[19]: 
+   f side      relation
+0  tahera     grand mom
+1   munnu  dadyungr bro
+2  johari  dadyungr bro
+3   siraj       dad sis
+4  hafeez  dadyungr sis
+5   hannu     grand paa
+6   ayyub         uncle
+7   aslam         uncle
+8   razak   dad big bro
+9  shukur  dad broinlaw
+
+2. Create a mother side montherfamily_members.xls file and import file in spyder  (atleast 5 names, columns are FamilyMemberName*Relation)
+ms=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\f&m.xlsx",sheet_name="Sheet2")
+
+ms
+Out[21]: 
+        m side         relation
+0        atiya          mom sis
+1       feroza          mom sis
+2       shukur          mom bro
+3       jabbar          mom bro
+4       zubair          mom bro
+5      zeenath        mom aunty
+6       zamrud        mom aunty
+7    f rehmaan        grand paa
+8  ameerunnisa        grand maa
+9       inayat  small grand paa
+
+3. Append two dataframes and print data.
+df_append=pd.concat([fs,ms],axis=0,ignore_index='true')
+df_append
+Out[25]: 
+    f side         relation       m side
+0   tahera        grand mom          NaN
+1    munnu     dadyungr bro          NaN
+2   johari     dadyungr bro          NaN
+3    siraj          dad sis          NaN
+4   hafeez     dadyungr sis          NaN
+5    hannu        grand paa          NaN
+6    ayyub            uncle          NaN
+7    aslam            uncle          NaN
+8    razak      dad big bro          NaN
+9   shukur     dad broinlaw          NaN
+10     NaN          mom sis        atiya
+11     NaN          mom sis       feroza
+12     NaN          mom bro       shukur
+13     NaN          mom bro       jabbar
+14     NaN          mom bro       zubair
+15     NaN        mom aunty      zeenath
+16     NaN        mom aunty       zamrud
+17     NaN        grand paa    f rehmaan
+18     NaN        grand maa  ameerunnisa
+19     NaN  small grand paa       inayat
+
+[or]
+
+df_append=pd.concat([fs,ms],axis=1)
+df_append
+Out[24]: 
+   f side      relation       m side         relation
+0  tahera     grand mom        atiya          mom sis
+1   munnu  dadyungr bro       feroza          mom sis
+2  johari  dadyungr bro       shukur          mom bro
+3   siraj       dad sis       jabbar          mom bro
+4  hafeez  dadyungr sis       zubair          mom bro
+5   hannu     grand paa      zeenath        mom aunty
+6   ayyub         uncle       zamrud        mom aunty
+7   aslam         uncle    f rehmaan        grand paa
+8   razak   dad big bro  ameerunnisa        grand maa
+9  shukur  dad broinlaw       inayat  small grand paa
+
+Q4>Create and import file
+1. Create your sister names  Sisters.xls file and import file in spyder  (atleast 5 names, columns are SisterName*Relation)
+2. Create your brother names Brothers.xls file and import file in spyder  (atleast 5 names, columns are BrotherName*Relation)
+3. Append two dataframes and print data.
+
+bro_lst=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\s&b.xlsx",sheet_name="Sheet2")
+
+bro_lst
+Out[30]: 
+  b names    relation
+0     suf         bro
+1   razak  cousin bro
+2     reh  cousin bro
+3     haq  cousin bro
+4   imran  cousin bro
+
+sis_lst=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\s&b.xlsx")
+
+sis_lst
+Out[32]: 
+      names    relation
+0  tabassum         sis
+1    irfana         sis
+2    aneesa  cousin sis
+3   naseera  cousin sis
+4   jabeena  cousin sis
+
+df_append=pd.concat([bro_lst,sis_lst],axis=0,ignore_index="true")
+df_append
+Out[35]: 
+  b names    relation     names
+0     suf         bro       NaN
+1   razak  cousin bro       NaN
+2     reh  cousin bro       NaN
+3     haq  cousin bro       NaN
+4   imran  cousin bro       NaN
+5     NaN         sis  tabassum
+6     NaN         sis    irfana
+7     NaN  cousin sis    aneesa
+8     NaN  cousin sis   naseera
+9     NaN  cousin sis   jabeena
+
+df_append=pd.concat([bro_lst,sis_lst],axis=1)
+df_append
+Out[36]: 
+  b names    relation     names    relation
+0     suf         bro  tabassum         sis
+1   razak  cousin bro    irfana         sis
+2     reh  cousin bro    aneesa  cousin sis
+3     haq  cousin bro   naseera  cousin sis
+4   imran  cousin bro   jabeena  cousin sis
+
+
+
+Q5>Create and import file
+1. Create a Dal related  dal_items.xlsx file and import file in spyder (atleast 5 names, columns are VegFoodName*Taste)
+2. Create a vegitable related  vegitable_items.xlsx file and import file in spyder (atleast 5 names, columns are VegFoodName*Taste)
+3. Append two dataframes and print data.
+
+dal=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\dal&veg.xlsx")
+
+dal
+Out[24]: 
+          vegitem         taste
+0       moong dal         spicy
+1  lal masoor dal      saltless
+2       arhar dal          sour
+3       chana dal           hot
+4  hara tuvar dal  no tempring 
+
+veg=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\dal&veg.xlsx",sheet_name="Sheet2")
+
+veg
+Out[26]: 
+        vegitem              taste
+0       potato    sweet mild taste
+1       pumpkin  earthy sweet flvr
+2          peas  sweet and savoury
+3        tomato              tangy
+4  sweet potato              sweet
+
+df_append=pd.concat([dal,veg],axis=0,ignore_index="true")
+
+df_append
+Out[28]: 
+          vegitem              taste
+0       moong dal              spicy
+1  lal masoor dal           saltless
+2       arhar dal               sour
+3       chana dal                hot
+4  hara tuvar dal       no tempring 
+5         potato    sweet mild taste
+6         pumpkin  earthy sweet flvr
+7            peas  sweet and savoury
+8          tomato              tangy
+9    sweet potato              sweet
+
+
+df_append=pd.concat([soups,fry],axis=1)
+
+df_append
+Out[29]: 
+           soup  taste           fry        taste
+0   tomato soup  yummy    bhendi fry       crispy
+1     corn soup    hot  chilly bajji         oily
+2  chicken soup   cool   chicken fry        super
+3   mixveg soup  spicy   brinjal fry    fantastic
+4   mutton soup  salty      fish fry  over cooked
+
+
+Q6>Create and import file
+1. Create a soups related  soups_items.xlsx file and import file in spyder (atleast 5 names, columns are soups*Taste)
+2. Create a fry related  fry_items.xlsx file and import file in spyder (atleast 5 names, columns are fry*Taste)
+3. Append two dataframes and print data.
+
+soups=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\soup&fry.xlsx")
+
+soups
+Out[17]: 
+           soup  taste
+0   tomato soup  yummy
+1     corn soup    hot
+2  chicken soup   cool
+3   mixveg soup  spicy
+4   mutton soup  salty
+
+
+fry=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\soup&fry.xlsx",sheet_name='Sheet2')
+
+fry
+Out[19]: 
+            fry        taste
+0    bhendi fry       crispy
+1  chilly bajji         oily
+2   chicken fry        super
+3   brinjal fry    fantastic
+4      fish fry  over cooked
+
+
+df_append=pd.concat([soups,fry],axis=0,ignore_index="true")
+
+df_append
+Out[20]: 
+           soup        taste           fry
+0   tomato soup        yummy           NaN
+1     corn soup          hot           NaN
+2  chicken soup         cool           NaN
+3   mixveg soup        spicy           NaN
+4   mutton soup        salty           NaN
+5           NaN       crispy    bhendi fry
+6           NaN         oily  chilly bajji
+7           NaN        super   chicken fry
+8           NaN    fantastic   brinjal fry
+9           NaN  over cooked      fish fry
+
+[or]
+
+df_append=pd.concat([soups,fry],axis=1)
+
+df_append
+Out[22]: 
+           soup  taste           fry        taste
+0   tomato soup  yummy    bhendi fry       crispy
+1     corn soup    hot  chilly bajji         oily
+2  chicken soup   cool   chicken fry        super
+3   mixveg soup  spicy   brinjal fry    fantastic
+4   mutton soup  salty      fish fry  over cooked
+
+
+Q7>Create and import file
+1. Create a Chicken related chicken_items.xlsx file and import file in spyder (atleast 5 names, columns are NonVegFoodName*Taste)
+2. Create a mutton related mutton_items.xlsx file and import file in spyder (atleast 5 names, columns are NonVegFoodName*Taste)
+3. Append two dataframes and print data.
+
+
+chk=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\nonvegitem.xlsx")
+chk
+Out[12]: 
+        nonveg item  taste
+0       chicken fry  yummy
+1  chicken tandoori  spicy
+2   chicken  khorma    hot
+3   chicken biryani   cool
+4   chicken showrma  salty
+
+
+mtn=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\nonvegitem.xlsx",sheet_name="Sheet2")
+mtn
+Out[13]: 
+      nonveg item    taste
+0  mutton biryani    super
+1    mutton mandi  amazing
+2    mutton curry     oily
+3     mutton soup      hot
+4   mutton taheri    spicy
+
+
+df_append=pd.concat([chk,mtn],axis=0,ignore_index='true')
+df_append
+Out[14]: 
+        nonveg item    taste
+0       chicken fry    yummy
+1  chicken tandoori    spicy
+2   chicken  khorma      hot
+3   chicken biryani     cool
+4   chicken showrma    salty
+5    mutton biryani    super
+6      mutton mandi  amazing
+7      mutton curry     oily
+8       mutton soup      hot
+9     mutton taheri    spicy
+
+df_append=pd.concat([chk,mtn],axis=1)
+df_append
+Out[15]: 
+        nonveg item  taste     nonveg item    taste
+0       chicken fry  yummy  mutton biryani    super
+1  chicken tandoori  spicy    mutton mandi  amazing
+2   chicken  khorma    hot    mutton curry     oily
+3   chicken biryani   cool     mutton soup      hot
+4   chicken showrma  salty   mutton taheri    spicy
+
+
+
+Q8>Create and import file
+1. Create a winter season  winterseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+2. Create a summer season  summerseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+3. Create a rainy season  rainyseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+4. Append all dataframes and print data.
+
+ws=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\seasons.xlsx")
+
+ws
+Out[38]: 
+     months seasons
+0  november  winter
+1  december  winter
+
+ss=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\seasons.xlsx",sheet_name="Sheet2")
+
+ss
+Out[40]: 
+   months seasons
+0  april   summer
+1     may  summer
+
+rs=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\seasons.xlsx",sheet_name="Sheet3")
+
+rs
+Out[42]: 
+      months seasons
+0     august   rainy
+1  september   rainy
+
+df_append=pd.concat([ws,ss,rs],axis=0,ignore_index="true")
+
+df_append
+Out[46]: 
+      months seasons
+0   november  winter
+1   december  winter
+2     april   summer
+3        may  summer
+4     august   rainy
+5  september   rainy
+
+[or]
+
+df_append=pd.concat([ws,ss,rs],axis=1)
+df_append
+Out[47]: 
+     months seasons  months seasons     months seasons
+0  november  winter  april   summer     august   rainy
+1  december  winter     may  summer  september   rainy
+
+
+Q9>Create and import file
+1. Create a red colour flowers redflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+2. Create a white colour flowers whiteflowers_names.xlsx file  and import file in spyder  (atleast 3 names, columns are FlowerName*color)
+3. Create a pink colour flowers whiteflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+4. Create a yellow colour flowers whiteflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+5. Append all dataframes and print data.
+
+import pandas as pd
+
+fc=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\flowers.xlsx")
+
+fc
+Out[3]: 
+     flowers colours
+0       rose     red
+1  hibiscuss     red
+2  amaryllis     red
+
+fc1=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\flowers.xlsx",sheet_name="Sheet2")
+
+fc1
+Out[5]: 
+     flowers colours
+0  sunflower  yellow
+1       rose  yellow
+2   marigold  yellow
+
+fc2=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\flowers.xlsx",sheet_name="Sheet3")
+
+fc2
+Out[7]: 
+     flowers colours
+0  carnation    pink
+1       rose    pink
+2   dianthus    pink
+
+fc3=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment11\flowers.xlsx",sheet_name="Sheet4")
+
+fc3
+Out[8]: 
+   flowers colours
+0  jasmine   white
+1    lilly   white
+2     rose   white
+
+df_append=pd.concat([fc,fc1,fc2,fc3],axis=0,ignore_index='true')
+
+df_append
+Out[10]: 
+      flowers colours
+0        rose     red
+1   hibiscuss     red
+2   amaryllis     red
+3   sunflower  yellow
+4        rose  yellow
+5    marigold  yellow
+6   carnation    pink
+7        rose    pink
+8    dianthus    pink
+9     jasmine   white
+10      lilly   white
+11       rose   white
+
+df_append=pd.concat([fc,fc1,fc2,fc3],axis=1)
+df_append
+Out[11]: 
+     flowers colours    flowers colours    flowers colours  flowers colours
+0       rose     red  sunflower  yellow  carnation    pink  jasmine   white
+1  hibiscuss     red       rose  yellow       rose    pink    lilly   white
+2  amaryllis     red   marigold  yellow   dianthus    pink     rose   white
+

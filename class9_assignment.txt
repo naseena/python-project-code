@@ -1,0 +1,419 @@
+Task: Explore in Google and Make a document :
+
+1. What are basic checks we do for pandas dataframe?
+   colums
+   rows
+   shape
+   head
+   tail
+   dtypes
+   index
+   info
+   type
+   
+2. What is pandas dataframe?
+  
+A Pandas DataFrame is a 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns.
+
+Task: Write a program
+
+Q> create and import below files. print basic check of all files dataframe?
+
+1. Create a friend_names.csv file delimiter is comma(,)  (atleast 10 names, columns are FriendName,Quality)
+import pandas as pd
+from pandas import read_csv,read_excel
+
+friends=pd.read_csv(r"C:\Users\hp\Documents\Trainee\nasheenazubair\friendsname.txt",sep=",")
+friends
+    name     quality 
+0  shabana         clvr
+1  mobeena  intelligent
+2  sabhiya       silent
+3  shaheda     innocent
+4   fatima       dancer
+5   gowsia       singer
+6  fazeela       writer
+7  muskaan        anger
+8   maahin         bold
+9   safiya         cool
+
+2. Create a family_members.txt file delimiter is star (*), (atleast 10 names, columns are FamilyMemberName*Relation)
+
+family=pd.read_csv(r"C:\Users\hp\Documents\Trainee\nasheenazubair\familymembers.txt",sep="*")
+family
+
+t[4]: 
+   family  relation
+0    sule       dad
+1    razi       mom
+2    tabu      sis1
+3     irf      sis2
+4   zubbu     hubby
+5   suffi       bro
+6    zain       son
+7  aatika  daughter
+8     zam  broinlaw
+9     zah  sisinlaw
+
+3. Create a Vegfood_items.txt file delimiter is pipe (|), (atleast 10 names, columns are VegFoodName*Taste)
+
+vegfood=pd.read_csv(r"C:\Users\hp\Documents\Trainee\nasheenazubair\vegfooditems.txt",sep="|")
+vegfood
+
+Out[8]: 
+        Vegfood       taste
+0       Aalufry       super
+1     Bhendifry       tasty
+2    Gobimasala       salty
+3   Paneerpalak       spicy
+4    Gobipaneer  overcooked
+5  Brinjalcurry   tasteless
+6  Paneermasala    saltless
+7     Pulihaara        sour
+8         Bajji        0ily
+9     Carrotfry       sweet
+4. Create a NonVegfood_items.txt file delimiter is pipe (|), (atleast 10 names, columns are NonVegFoodName*Taste)
+
+nonvegfood=pd.read_csv(r"C:\Users\hp\Documents\Trainee\nasheenazubair\nonvegitems.txt",sep="|")
+nonvegfood
+
+Out[10]: 
+           nonveg           taste
+0      chickenfry           yummy
+1       muttonfry           tasty
+2     muttoncurry           super
+3  chickenbiryani         amazing
+4   muttonbiryani      very tasty
+5       chicken65           spicy
+6          pulaav           salty
+7        eggcurry       tasteless
+8         fishfry      overcooked
+9       fishcurry  without masala
+5. Create a month_names.txt file delimiter is and (&), (atleast 12 names, columns are MonthName*Season)
+
+months=pd.read_csv(r"C:\Users\hp\Documents\Trainee\nasheenazubair\monthsname.txt",sep="&")
+months
+
+Out[12]: 
+     months  seasons
+0   january  winter 
+1       feb  winter 
+2     march   summer
+3     april   summer
+4       may   summer
+5      june   summer
+6      july  raining
+7       aug  raining
+8       sep  raining
+9       oct  raining
+10      nov  winter 
+11      dec  winter 
+6. Create a colours_names.txt file delimiter is cap (^), (atleast 12 names, columns are colourName_in_English^colourName_in_Hindi^colourName_in_Telugu)
+
+colours=pd.read_csv(r"C:\Users\hp\Documents\Trainee\nasheenazubair\coloursname.txt",sep="^")
+colours
+Out[13]: 
+  english      hindi     telugu
+0  yellow      peela     pasupu
+1     red       laal     yerupu
+2    blue      neela     neelam
+3   green      haraa     pachha
+4    pink    gulaabi    gulaabi
+5   white     safaid     telupu
+6   black      kaala     nalupu
+7  orange    kashaye   kashayam
+8    grey     cement     cement
+9   brown  chocolate  chocolate
+7. Create a friend_names.xls file  (atleast 10 names, columns are FriendName,Quality)
+
+friends=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\nashhuxl2\assign9practise.xlsx",sheet_name="Sheet3")
+friends
+Out[16]: 
+      name     quality 
+0  shabana         clvr
+1  mobeena  intelligent
+2  sabhiya       silent
+3  shaheda     innocent
+4   fatima       dancer
+5   gowsia       singer
+6  fazeela       writer
+7  muskaan        anger
+8   maahin         bold
+9   safiya         cool
+
+df.columns
+df.index
+Out[29]: RangeIndex(start=0, stop=10, step=1)
+
+df.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 2 columns):
+ #   Column    Non-Null Count  Dtype 
+---  ------    --------------  ----- 
+ 0   name      10 non-null     object
+ 1   quality   10 non-null     object
+dtypes: object(2)
+memory usage: 288.0+ bytes
+
+df.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 2 columns):
+ #   Column    Non-Null Count  Dtype 
+---  ------    --------------  ----- 
+ 0   name      10 non-null     object
+ 1   quality   10 non-null     object
+dtypes: object(2)
+memory usage: 288.0+ bytes
+
+df.head(5)
+Out[32]: 
+      name     quality 
+0  shabana         clvr
+1  mobeena  intelligent
+2  sabhiya       silent
+3  shaheda     innocent
+4   fatima       dancer
+
+df.tail(5)
+Out[33]: 
+      name quality 
+5   gowsia   singer
+6  fazeela   writer
+7  muskaan    anger
+8   maahin     bold
+9   safiya     cool
+
+df.dtypes
+Out[34]: 
+name        object
+quality     object
+dtype: object
+
+row=df.shape
+
+type(df)
+
+for p in lst:
+    print(p)
+name
+quality 
+Out[36]: pandas.core.frame.DataFrame
+
+lst1=lst[1]
+
+lst1
+Out[46]: 'quality '
+
+
+lst1=lst[0]
+lst1
+Out[48]: 'name'
+
+8. Create a family_members.xls file  (atleast 10 names, columns are FamilyMemberName*Relation)
+9. Create a Vegfood_items.xlsx file  (atleast 10 names, columns are VegFoodName*Taste)
+10. Create a NonVegfood_items.xlsx file  (atleast 10 names, columns are NonVegFoodName*Taste)
+11. Create a month_names.xlsx file (atleast 12 names, columns are MonthName*Season)
+seasons=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\nashhuxl2\assign9practise.xlsx",sheet_name="Sheet2")
+
+seasons
+Out[4]: 
+     months  seasons
+0   january  winter 
+1       feb  winter 
+2     march   summer
+3     april   summer
+4       may   summer
+5      june   summer
+6      july  raining
+7       aug  raining
+8       sep  raining
+9       oct  raining
+10      nov  winter 
+11      dec  winter 
+seasons.columns
+Out[5]: Index(['months', 'seasons'], dtype='object')
+
+seasons.shape
+Out[6]: (12, 2)
+
+seasons.head(5)
+Out[7]: 
+    months  seasons
+0  january  winter 
+1      feb  winter 
+2    march   summer
+3    april   summer
+4      may   summer
+
+seasons.tail(5)
+Out[8]: 
+   months  seasons
+7     aug  raining
+8     sep  raining
+9     oct  raining
+10    nov  winter 
+11    dec  winter 
+
+type(seasons)
+Out[10]: pandas.core.frame.DataFrame
+
+seasons.dtypes
+Out[11]: 
+months     object
+seasons    object
+dtype: object
+
+seasons.info
+Out[12]: 
+<bound method DataFrame.info of      months  seasons
+0   january  winter 
+1       feb  winter 
+2     march   summer
+3     april   summer
+4       may   summer
+5      june   summer
+6      july  raining
+7       aug  raining
+8       sep  raining
+9       oct  raining
+10      nov  winter 
+11      dec  winter >
+
+seasons.index
+Out[13]: RangeIndex(start=0, stop=12, step=1)
+
+seasons[0:4]
+Out[14]: 
+    months  seasons
+0  january  winter 
+1      feb  winter 
+2    march   summer
+3    april   summer
+
+seasons.iloc[0:4,0:2]
+Out[15]: 
+    months  seasons
+0  january  winter 
+1      feb  winter 
+2    march   summer
+3    april   summer
+
+
+
+12. Create a colours_names.xlsx file  (atleast 12 names, columns are colourName_in_English^colourName_in_Hindi^colourName_in_Telugu)
+
+df_new=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\nashhuxl2\assign9practise.xlsx",sheet_name="Sheet1")
+df_new
+Out[57]: 
+  english      hindi     telugu
+0  yellow      peela     pasupu
+1     red       laal     yerupu
+2    blue      neela     neelam
+3   green      haraa     pachha
+4    pink    gulaabi    gulaabi
+5   white     safaid     telupu
+6   black      kaala     nalupu
+7  orange    kashaye   kashayam
+8    grey     cement     cement
+9   brown  chocolate  chocolate
+
+df_new.columns
+Out[58]: Index(['english', 'hindi', 'telugu'], dtype='object')
+
+df_new.head(4)
+Out[59]: 
+  english  hindi  telugu
+0  yellow  peela  pasupu
+1     red   laal  yerupu
+2    blue  neela  neelam
+3   green  haraa  pachha
+
+df_new.tail(5)
+Out[60]: 
+  english      hindi     telugu
+5   white     safaid     telupu
+6   black      kaala     nalupu
+7  orange    kashaye   kashayam
+8    grey     cement     cement
+9   brown  chocolate  chocolate
+
+df_new.shape
+Out[61]: (10, 3)
+
+df_new.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 3 columns):
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   english  10 non-null     object
+ 1   hindi    10 non-null     object
+ 2   telugu   10 non-null     object
+dtypes: object(3)
+memory usage: 368.0+ bytes
+
+df_new.dtypes
+Out[63]: 
+english    object
+hindi      object
+telugu     object
+dtype: object
+
+type(df_new)
+Out[64]: pandas.core.frame.DataFrame
+
+df_new.index
+Out[65]: RangeIndex(start=0, stop=10, step=1)
+
+df_new.dtypes
+Out[63]: 
+english    object
+hindi      object
+telugu     object
+dtype: object
+
+type(df_new)
+Out[64]: pandas.core.frame.DataFrame
+
+df_new.index
+Out[65]: RangeIndex(start=0, stop=10, step=1)
+
+lst2=list(df_new.columns)
+
+lst2
+Out[67]: ['english', 'hindi', 'telugu']
+
+lst=list(df_new.columns)
+lst
+for p in lst:
+    print(p)
+lst1=lst[2]
+lst1
+english
+hindi
+telugu
+Out[68]: 'telugu'
+
+lst1
+Out[69]: 'telugu'
+
+lst1=lst[0:]
+lst1
+Out[70]: ['english', 'hindi', 'telugu']
+
+df_new[0:4]
+Out[72]: 
+  english  hindi  telugu
+0  yellow  peela  pasupu
+1     red   laal  yerupu
+2    blue  neela  neelam
+3   green  haraa  pachha
+
+df_new.iloc[0:3,0:4]
+Out[73]: 
+  english  hindi  telugu
+0  yellow  peela  pasupu
+1     red   laal  yerupu
+2    blue  neela  neelam

@@ -1,0 +1,523 @@
+
+
+Task: Explore in Google and Make a document :
+
+1. What is data merge in pandas ?
+Pandas DataFrame merge() Method
+The merge() method updates the content of two DataFrame by merging them together, using the specified method(s). Use the parameters to control which values to keep and which to replace.
+
+
+2. Types of data merges in pandas?
+Type of merge to be performed.
+
+left: use only keys from left frame, similar to a SQL left outer join; preserve key order.
+
+right: use only keys from right frame, similar to a SQL right outer join; preserve key order.
+
+outer: use union of keys from both frames, similar to a SQL full outer join; sort keys lexicographically.
+
+inner: use intersection of keys from both frames, similar to a SQL inner join; preserve the order of the left keys.
+
+cross: creates the cartesian product from both frames, preserves the order of the left keys.
+
+3. What are the functions available for data merge in pandas?
+ merge() for combining data on common columns or indices.
+.join() for combining data on a key column or an index.
+concat() for combining DataFrames across rows or columns.
+
+
+
+
+Task: create a program
+Q1>Create and import file
+1. Create schoolmets schoolmets_names.xls file and import file in spyder (atleast 5 names, columns are FriendName,Quality) ,
+2. Create collegemets collegemets_names.xls file and import file in spyder (atleast 5 names, columns are FriendName,Quality),
+3. Do inner Merge two dataframes and print friend names. (key=friendname)
+4. Do left Merge two dataframes and print friend names.(key=friendname)
+5. Do right Merge two dataframes and print friend names.(key=friendname)
+6. Do outer Merge two dataframes and print friend names.(key=friendname)
+
+schlmates=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\friends merge.xlsx ")
+
+schlmates
+Out[12]: 
+  friendname      quality
+0    mounika       silent
+1    fazeela     talktive
+2      anwar  intelligent
+3     pavani         cool
+4   seerisha        anger
+
+clgmates=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\friends merge.xlsx ",sheet_name='Sheet2')
+
+clgmates
+Out[14]: 
+  friendname     quality
+0    shabana       funny
+1    fazeela         hot
+2     fatima        soft
+3     gowsia     fighter
+4      divya  possessive
+
+df_merge=clgmates.merge(schlmates,how='inner',on='friendname')
+
+df_merge
+Out[16]: 
+  friendname quality_x quality_y
+0    fazeela       hot  talktive
+
+df_merge=clgmates.merge(schlmates,how='left',on='friendname')
+
+df_merge
+Out[19]: 
+  friendname   quality_x quality_y
+0    shabana       funny       NaN
+1    fazeela         hot  talktive
+2     fatima        soft       NaN
+3     gowsia     fighter       NaN
+4      divya  possessive       NaN
+
+clgmates.merge(schlmates,how='right',on='friendname')
+Out[20]: 
+  friendname quality_x    quality_y
+0    mounika       NaN       silent
+1    fazeela       hot     talktive
+2      anwar       NaN  intelligent
+3     pavani       NaN         cool
+4   seerisha       NaN        anger
+
+df_merge=clgmates.merge(schlmates,how='outer',on='friendname')
+
+df_merge
+Out[22]: 
+  friendname   quality_x    quality_y
+0    shabana       funny          NaN
+1    fazeela         hot     talktive
+2     fatima        soft          NaN
+3     gowsia     fighter          NaN
+4      divya  possessive          NaN
+5    mounika         NaN       silent
+6      anwar         NaN  intelligent
+7     pavani         NaN         cool
+8   seerisha         NaN        anger
+
+Q3>Create and import file
+1. Create a father side fatherfamily_members.xls file and import file in spyder  (atleast 5 names, columns are FamilyMemberName*Relation)
+2. Create a mother side montherfamily_members.xls file and import file in spyder  (atleast 5 names, columns are FamilyMemberName*Relation)
+3. Do inner Merge two dataframes and print friend names. (key=relation)
+4. Do left Merge two dataframes and print friend names.(key=relation)
+5. Do right Merge two dataframes and print friend names.(key=relation)
+6. Do outer Merge two dataframes and print friend names.(key=relation)
+
+df_f=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\family merge.xlsx ")
+
+df_f
+Out[25]: 
+  familymember\father      relation
+0              hafeez         aunty
+1               chaan    big father
+2               munna  small father
+3              shukur         uncle
+4         taherunnisa      grandmaa
+
+df_m=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\family merge.xlsx ",sheet_name="Sheet2")
+
+df_m
+Out[26]: 
+  familymembers\mother   relation
+0                atiya      aunty
+1               feroza      aunty
+2           ameerunnsa   grandmaa
+3            f rehmaan  grand paa
+4               shukur      uncle
+
+df_merge=df_f.merge(df_m,how='inner',on='relation')
+df_merge
+Out[30]: 
+  familymember\father  relation familymembers\mother
+0              hafeez     aunty                atiya
+1              hafeez     aunty               feroza
+2              shukur     uncle               shukur
+3         taherunnisa  grandmaa           ameerunnsa
+
+df_f.merge(df_m,how='left',on='relation')
+Out[31]: 
+  familymember\father      relation familymembers\mother
+0              hafeez         aunty                atiya
+1              hafeez         aunty               feroza
+2               chaan    big father                  NaN
+3               munna  small father                  NaN
+4              shukur         uncle               shukur
+5         taherunnisa      grandmaa           ameerunnsa
+
+df_f.merge(df_m,how='right',on='relation')
+Out[33]: 
+  familymember\father   relation familymembers\mother
+0              hafeez      aunty                atiya
+1              hafeez      aunty               feroza
+2         taherunnisa   grandmaa           ameerunnsa
+3                 NaN  grand paa            f rehmaan
+4              shukur      uncle               shukur
+
+df_f.merge(df_m,how='outer',on='relation')
+Out[34]: 
+  familymember\father      relation familymembers\mother
+0              hafeez         aunty                atiya
+1              hafeez         aunty               feroza
+2               chaan    big father                  NaN
+3               munna  small father                  NaN
+4              shukur         uncle               shukur
+5         taherunnisa      grandmaa           ameerunnsa
+6                 NaN     grand paa            f rehmaan
+
+
+
+Q5>Create and import file
+1. Create a Dal related  dal_items.xlsx file and import file in spyder (atleast 5 names, columns are VegFoodName*Taste)
+2. Create a vegitable related  vegitable_items.xlsx file and import file in spyder (atleast 5 names, columns are VegFoodName*Taste)
+3. Do inner Merge two dataframes and print friend names. (key=taste)
+4. Do left Merge two dataframes and print friend names.(key=taste)
+5. Do right Merge two dataframes and print friend names.(key=taste)
+6. Do outer Merge two dataframes and print friend names.(key=taste)
+
+dal=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\vegitems.xlsx ")
+dal
+Out[35]: 
+          vegitem         taste
+0       moong dal         spicy
+1  lal masoor dal      saltless
+2       arhar dal          sour
+3       chana dal           hot
+4  hara tuvar dal  no tempring 
+
+veg=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\vegitems.xlsx ",sheet_name='Sheet2')
+veg
+Out[37]: 
+        vegitem              taste
+0       potato    sweet mild taste
+1       pumpkin  earthy sweet flvr
+2          peas  sweet and savoury
+3        tomato              tangy
+4  sweet potato              sweet
+
+veg.merge(dal,how='inner',on='taste')
+Out[39]: 
+Empty DataFrame
+Columns: [vegitem_x, taste, vegitem_y]
+Index: []
+
+veg.merge(dal,how='left',on='taste')
+Out[40]: 
+      vegitem_x              taste vegitem_y
+0       potato    sweet mild taste       NaN
+1       pumpkin  earthy sweet flvr       NaN
+2          peas  sweet and savoury       NaN
+3        tomato              tangy       NaN
+4  sweet potato              sweet       NaN
+
+veg.merge(dal,how='right',on='taste')
+Out[41]: 
+  vegitem_x         taste       vegitem_y
+0       NaN         spicy       moong dal
+1       NaN      saltless  lal masoor dal
+2       NaN          sour       arhar dal
+3       NaN           hot       chana dal
+4       NaN  no tempring   hara tuvar dal
+
+veg.merge(dal,how='outer',on='taste')
+Out[42]: 
+      vegitem_x              taste       vegitem_y
+0       potato    sweet mild taste             NaN
+1       pumpkin  earthy sweet flvr             NaN
+2          peas  sweet and savoury             NaN
+3        tomato              tangy             NaN
+4  sweet potato              sweet             NaN
+5           NaN              spicy       moong dal
+6           NaN           saltless  lal masoor dal
+7           NaN               sour       arhar dal
+8           NaN                hot       chana dal
+9           NaN       no tempring   hara tuvar dal
+
+Q6>Create and import file
+1. Create a soups related  soups_items.xlsx file and import file in spyder (atleast 5 names, columns are soups*Taste)
+2. Create a fry related  fry_items.xlsx file and import file in spyder (atleast 5 names, columns are fry*Taste)
+3. Do inner Merge two dataframes and print friend names. (key=taste)
+4. Do left Merge two dataframes and print friend names.(key=taste)
+5. Do right Merge two dataframes and print friend names.(key=taste)
+6. Do outer Merge two dataframes and print friend names.(key=taste)
+
+
+df_s=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\soups ,fry.xlsx ")
+df_s
+Out[43]: 
+           soup  taste
+0   tomato soup  yummy
+1     corn soup    hot
+2  chicken soup   cool
+3   mixveg soup  spicy
+4   mutton soup  salty
+
+df_f=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\soups ,fry.xlsx ",sheet_name='Sheet2')
+df_f
+Out[44]: 
+            fry        taste
+0    bhendi fry       crispy
+1  chilly bajji         oily
+2   chicken fry        super
+3   brinjal fry    fantastic
+4      fish fry  over cooked
+
+df_s.merge(df_f,how='inner',on='taste')
+Out[45]: 
+Empty DataFrame
+Columns: [soup, taste, fry]
+Index: []
+
+df_s.merge(df_f,how='left',on='taste')
+Out[46]: 
+           soup  taste  fry
+0   tomato soup  yummy  NaN
+1     corn soup    hot  NaN
+2  chicken soup   cool  NaN
+3   mixveg soup  spicy  NaN
+4   mutton soup  salty  NaN
+
+df_s.merge(df_f,how='right',on='taste')
+Out[47]: 
+  soup        taste           fry
+0  NaN       crispy    bhendi fry
+1  NaN         oily  chilly bajji
+2  NaN        super   chicken fry
+3  NaN    fantastic   brinjal fry
+4  NaN  over cooked      fish fry
+
+df_s.merge(df_f,how='outer',on='taste')
+Out[48]: 
+           soup        taste           fry
+0   tomato soup        yummy           NaN
+1     corn soup          hot           NaN
+2  chicken soup         cool           NaN
+3   mixveg soup        spicy           NaN
+4   mutton soup        salty           NaN
+5           NaN       crispy    bhendi fry
+6           NaN         oily  chilly bajji
+7           NaN        super   chicken fry
+8           NaN    fantastic   brinjal fry
+9           NaN  over cooked      fish fry
+
+
+Q7>Create and import file
+1. Create a Chicken related chicken_items.xlsx file and import file in spyder (atleast 5 names, columns are NonVegFoodName*Taste)
+2. Create a mutton related mutton_items.xlsx file and import file in spyder (atleast 5 names, columns are NonVegFoodName*Taste)
+3. Do inner Merge two dataframes and print friend names. (key=taste)
+4. Do left Merge two dataframes and print friend names.(key=taste)
+5. Do right Merge two dataframes and print friend names.(key=taste)
+6. Do outer Merge two dataframes and print friend names.(key=taste)
+
+df_c=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\nonveg.xlsx ")
+df_c
+Out[49]: 
+        nonveg item  taste
+0       chicken fry  yummy
+1  chicken tandoori  spicy
+2   chicken  khorma    hot
+3   chicken biryani   cool
+4   chicken showrma  salty
+
+df_m=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\nonveg.xlsx ",sheet_name='Sheet2')
+df_m
+Out[50]: 
+      nonveg item    taste
+0  mutton biryani    super
+1    mutton mandi  amazing
+2    mutton curry     oily
+3     mutton soup      hot
+4   mutton taheri    spicy
+
+df_m.merge(df_c,how='inner',on='taste')
+Out[51]: 
+   nonveg item_x  taste     nonveg item_y
+0    mutton soup    hot   chicken  khorma
+1  mutton taheri  spicy  chicken tandoori
+
+df_m.merge(df_c,how='left',on='taste')
+Out[52]: 
+    nonveg item_x    taste     nonveg item_y
+0  mutton biryani    super               NaN
+1    mutton mandi  amazing               NaN
+2    mutton curry     oily               NaN
+3     mutton soup      hot   chicken  khorma
+4   mutton taheri    spicy  chicken tandoori
+
+df_m.merge(df_c,how='right',on='taste')
+Out[53]: 
+   nonveg item_x  taste     nonveg item_y
+0            NaN  yummy       chicken fry
+1  mutton taheri  spicy  chicken tandoori
+2    mutton soup    hot   chicken  khorma
+3            NaN   cool   chicken biryani
+4            NaN  salty   chicken showrma
+
+df_m.merge(df_c,how='outer',on='taste')
+Out[54]: 
+    nonveg item_x    taste     nonveg item_y
+0  mutton biryani    super               NaN
+1    mutton mandi  amazing               NaN
+2    mutton curry     oily               NaN
+3     mutton soup      hot   chicken  khorma
+4   mutton taheri    spicy  chicken tandoori
+5             NaN    yummy       chicken fry
+6             NaN     cool   chicken biryani
+7             NaN    salty   chicken showrma
+
+
+
+Q8>Create and import file
+1. Create a winter season  winterseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+2. Create a summer season  summerseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+3. Create a rainy season  rainyseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+4. Do inner Merge all dataframes and print friend names. (key=season)
+5. Do left Merge all dataframes and print friend names.(key=season)
+6. Do right Merge all dataframes and print friend names.(key=season)
+7. Do outer Merge all dataframes and print friend names.(key=season)
+
+import pandas as pd
+
+dfw=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\seasons.xlsx ")
+
+dfw
+Out[3]: 
+     months seasons
+0  november  winter
+1  december  winter
+
+dfs=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\seasons.xlsx ",sheet_name='Sheet2')
+
+dfs
+Out[5]: 
+   months seasons
+0  april   summer
+1     may  summer
+
+dfr=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\seasons.xlsx ",sheet_name='Sheet3')
+
+dfr
+Out[7]: 
+      months seasons
+0     august   rainy
+1  september   rainy
+
+dfw.merge(dfs,how='inner',on='seasons').merge(dfr,how='inner',on='seasons')
+Out[8]: 
+Empty DataFrame
+Columns: [months_x, months_y, months, seasons]
+Index: []
+
+dfw.merge(dfs,how='left',on='seasons').merge(dfr,how='left',on='seasons')
+Out[9]: 
+   months_x seasons months_y months
+0  november  winter      NaN    NaN
+1  december  winter      NaN    NaN
+
+dfw.merge(dfs,how='outer',on='seasons').merge(dfr,how='outer',on='seasons')
+Out[10]: 
+   months_x seasons months_y     months
+0  november  winter      NaN        NaN
+1  december  winter      NaN        NaN
+2       NaN  summer   april         NaN
+3       NaN  summer      may        NaN
+4       NaN   rainy      NaN     august
+5       NaN   rainy      NaN  september
+
+dfw.merge(dfs,how='right',on='seasons').merge(dfr,how='right',on='seasons')
+Out[11]: 
+  months_x seasons months_y     months
+0      NaN   rainy      NaN     august
+1      NaN   rainy      NaN  september
+
+
+
+Q9>Create and import file
+1. Create a red colour flowers redflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+2. Create a white colour flowers whiteflowers_names.xlsx file  and import file in spyder  (atleast 3 names, columns are FlowerName*color)
+3. Create a pink colour flowers whiteflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+4. Create a yellow colour flowers whiteflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+5. Do inner Merge all dataframes and print friend names. (key=color)
+6. Do left Merge all dataframes and print friend names.(key=color)
+7. Do right Merge all dataframes and print friend names.(key=color)
+8. Do outer Merge all dataframes and print friend names.(key=color)
+
+import pandas as pd
+
+dfr=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\flowers.xlsx ")
+
+dfr
+Out[5]: 
+     flowers colours
+0       rose     red
+1  hibiscuss     red
+2  amaryllis     red
+
+dfy=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\flowers.xlsx ",sheet_name='Sheet2')
+
+dfy
+Out[7]: 
+     flowers colours
+0  sunflower  yellow
+1       rose  yellow
+2   marigold  yellow
+
+dfp=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\flowers.xlsx ",sheet_name='Sheet3')
+
+dfp
+Out[9]: 
+     flowers colours
+0  carnation    pink
+1       rose    pink
+2   dianthus    pink
+
+dfw=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment12\flowers.xlsx ",sheet_name='Sheet4')
+
+dfw
+Out[11]: 
+   flowers colours
+0  jasmine   white
+1    lilly   white
+2     rose   white
+
+dfr.merge(dfy,how='inner',on='colours').merge(dfp,how='inner',on='colours').merge(dfw,how='inner',on='colours')
+Out[12]: 
+Empty DataFrame
+Columns: [flowers_x, flowers_y, flowers_x, flowers_y, colours]
+Index: []
+
+dfr.merge(dfy,how='left',on='colours').merge(dfp,how='left',on='colours').merge(dfw,how='left',on='colours')
+Out[13]: 
+   flowers_x colours flowers_y flowers_x flowers_y
+0       rose     red       NaN       NaN       NaN
+1  hibiscuss     red       NaN       NaN       NaN
+2  amaryllis     red       NaN       NaN       NaN
+
+dfr.merge(dfy,how='right',on='colours').merge(dfp,how='right',on='colours').merge(dfw,how='right',on='colours')
+ut[14]: 
+  flowers_x colours flowers_y flowers_x flowers_y
+0       NaN   white       NaN       NaN   jasmine
+1       NaN   white       NaN       NaN     lilly
+2       NaN   white       NaN       NaN      rose
+
+dfr.merge(dfy,how='outer',on='colours').merge(dfp,how='outer',on='colours').merge(dfw,how='outer',on='colours')
+Out[15]: 
+    flowers_x colours  flowers_y  flowers_x flowers_y
+0        rose     red        NaN        NaN       NaN
+1   hibiscuss     red        NaN        NaN       NaN
+2   amaryllis     red        NaN        NaN       NaN
+3         NaN  yellow  sunflower        NaN       NaN
+4         NaN  yellow       rose        NaN       NaN
+5         NaN  yellow   marigold        NaN       NaN
+6         NaN    pink        NaN  carnation       NaN
+7         NaN    pink        NaN       rose       NaN
+8         NaN    pink        NaN   dianthus       NaN
+9         NaN   white        NaN        NaN   jasmine
+10        NaN   white        NaN        NaN     lilly
+11        NaN   white        NaN        NaN      rose
+

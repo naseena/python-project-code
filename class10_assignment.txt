@@ -1,0 +1,459 @@
+  Task: Explore in Google and Make a document :
+
+1. How to filter data in pandas dataframe?
+
+ To filter data in a pandas dataframe, you can use the query() method which lets you filter a DataFrame using SQL-like, plain-English statements. The method allows you to pass in a string that filters a DataFrame to a boolean expression. The Pandas.query() method lets you pass in a string that represents a filter expression 1.
+
+2. Types of data filters in pandas dataframe?
+  
+  Pandas is a popular data manipulation library in Python. It provides several ways to filter data from a dataframe. Here are some of the ways:
+
+Filtering with multiple conditions: You can filter data from a Pandas dataframe with multiple conditions using the & and | operators. For example, if you want to filter data where column A is greater than 10 and column B is less than 20, you can use the following code:
+df[(df['A'] > 10) & (df['B'] < 20)]
+
+
+Task: Write a program
+
+Q> create and import below files
+
+1. Create a friend_names.xls file  (atleast 10 names, columns are FriendName,Quality)
+Q1> create a dataframe which contains only your intelligent friends list.
+
+  df.quality.unique()
+Out[112]: 
+array(['funny', 'intelligent', 'innocent', 'dancer', 'anger', 'cool'],
+      dtype=object)
+df_fil1=df[df['quality']=='intelligent']
+ 
+ df_fil1
+Out[117]: 
+      name      quality
+1  mobeena  intelligent
+2  sabhiya  intelligent
+5   gowsia  intelligent
+
+
+Q2> create a dataframe which contains only your funny friends list.
+   df.quality.unique()
+Out[112]: 
+array(['funny', 'intelligent', 'innocent', 'dancer', 'anger', 'cool'],
+      dtype=object)
+ df_fil=df[df['quality']=='funny']
+
+df_fil
+Out[114]: 
+      name quality
+0  shabana   funny
+6  fazeela   funny
+8   maahin   funny
+
+
+2. Create a family_members.xls file  (atleast 10 names, columns are FamilyMemberName*Relation)
+ df_family=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment10\practise assign10.xlsx",sheet_name='Sheet3')
+
+df_family
+Out[119]: 
+    family      relation
+0     sule       parents
+1     razi       parents
+2     tabu        sister
+3      irf        sister
+4    zubbu         hubby
+5    suffi       brother
+6     zain           son
+7   aatika      daughter
+8      zam  brotherinlaw
+9      zah      sisinlaw
+10  rehaan       brother
+11  arazaq       brother
+12  aneesa        sister
+
+Q1> create a dataframe which contains only your brothers and sisters list.
+    lst=["brother","sister"]
+
+lst
+Out[12]: ['brother', 'sister']
+
+df_family[(df_family.relation.isin(lst))]
+Out[13]: 
+    family relation
+2     tabu   sister
+3      irf   sister
+5    suffi  brother
+10  rehaan  brother
+11  arazaq  brother
+12  aneesa   sister
+  
+Q2> create a dataframe which contains only your parents list.
+
+  df2=df_family[df_family['relation']=='parents']
+
+df2
+Out[125]: 
+  family relation
+0   sule  parents
+1   razi  parents
+
+Q3> create a dataframe which not contains your parents list.
+
+  df_not=df_family[df_family['relation']!='parents']
+
+df_not.relation.unique()
+Out[129]: 
+array(['sister', 'hubby', 'brother', 'son', 'daughter', 'brotherinlaw',
+       'sisinlaw'], dtype=object)
+
+Q4> create a dataframe which not contains your brothers list.
+    lst1=["brother"]
+
+df_family[(~df_family.relation.isin(lst1))]
+Out[28]: 
+    family      relation
+0     sule       parents
+1     razi       parents
+2     tabu        sister
+3      irf        sister
+4    zubbu         hubby
+6     zain           son
+7   aatika      daughter
+8      zam  brotherinlaw
+9      zah      sisinlaw
+12  aneesa        sister
+
+
+
+
+
+Q5> create a dataframe which contains either your brothers list or parents list.
+
+df_family[(df_family.relation=="brother")|(df_family.relation=="parents")]
+Out[12]: 
+    family relation
+0     sule  parents
+1     razi  parents
+5    suffi  brother
+10  rehaan  brother
+11  arazaq  brother
+
+
+
+
+Q5> create a dataframe which contains your brothers list and parents list.
+
+lst2=["brother","parents"]
+
+df_d=df_family[(df_family.relation.isin(lst2))]
+
+df_d
+Out[15]: 
+    family relation
+0     sule  parents
+1     razi  parents
+5    suffi  brother
+10  rehaan  brother
+11  arazaq  brother
+
+
+3. Create a Vegfood_items.xlsx file  (atleast 10 names, columns are VegFoodName*Taste)
+Q1>create a dataframe which are  soups items
+veg_fil=veg_food[veg_food['items']=='soup']
+
+veg_fil
+Out[6]: 
+      vegood items
+0     tomato  soup
+1       corn  soup
+9       leaf  soup
+11  mixedveg  soup
+
+
+Q2>create a dataframe which are curry items
+veg_curry=veg_food[veg_food['items']=='curry']
+
+veg_curry
+Out[11]: 
+         vegood  items
+4       brinjal  curry
+5          gobi  curry
+6    paneergobi  curry
+10  gobi masala  curry
+
+Q3>create a dataframe which are fry items
+
+veg_fry=veg_food[veg_food['items']=='fry']
+
+veg_fry
+Out[10]: 
+     vegood items
+2      aalu   fry
+3    bhendi   fry
+7    carrot   fry
+8  beetroot   fry
+
+Q4>create a dataframe which contains soups and fry items
+
+
+veg_fry=veg_food[veg_food['items'].isin(lst3)]
+
+veg_fry
+Out[29]: 
+      vegood items
+0     tomato  soup
+1       corn  soup
+2       aalu   fry
+3     bhendi   fry
+7     carrot   fry
+8   beetroot   fry
+9       leaf  soup
+11  mixedveg  soup
+
+[0r]
+
+veg_food[veg_food['items'].isin(["soup","fry"])]
+Out[30]: 
+      vegood items
+0     tomato  soup
+1       corn  soup
+2       aalu   fry
+3     bhendi   fry
+7     carrot   fry
+8   beetroot   fry
+9       leaf  soup
+11  mixedveg  soup
+
+Q5>create a dataframe which not contains soups and fry items
+veg_nt=veg_food[~(veg_food['items'].isin(lst3))]
+
+veg_nt
+Out[34]: 
+         vegood  items
+4       brinjal  curry
+5          gobi  curry
+6    paneergobi  curry
+10  gobi masala  curry
+
+Q6>create a dataframe which contains either soup or fry items
+veg_food[(veg_food["items"]=="soup") | (veg_food["items"]=="fry")]
+Out[42]: 
+      vegood items
+0     tomato  soup
+1       corn  soup
+2       aalu   fry
+3     bhendi   fry
+7     carrot   fry
+8   beetroot   fry
+9       leaf  soup
+11  mixedveg  soup
+
+
+
+4. Create a NonVegfood_items.xlsx file  (atleast 10 names, columns are NonVegFoodName*Taste)
+Q1>create a dataframe which contains only chicken items
+non_veg[non_veg['nonveg']=='chicken']
+Out[3]: 
+     nonveg     items
+0   chicken       fry
+3   chicken  tandoori
+7   chicken        65
+10  chicken     mandi
+
+Q2>create a dataframe which contains only mutton items
+non_veg[non_veg['nonveg']=='mutton']
+Out[4]: 
+   nonveg   items
+1  mutton   curry
+4  mutton  khorma
+8  mutton     fry
+9  mutton   mandi
+
+
+Q3>create a dataframe which contains only Fry items
+non_veg[non_veg['items']=='fry']
+Out[5]: 
+    nonveg items
+0  chicken   fry
+2     fish   fry
+5   prawns   fry
+8   mutton   fry
+
+Q4>create a dataframe which contains only Fry and chicken items
+
+nonveg_and=non_veg[(non_veg['items']=='fry') & (non_veg['nonveg']=='chicken')]
+
+nonveg_and
+Out[10]: 
+    nonveg items
+0  chicken   fry
+
+Q5>create a dataframe which not contains Fry and chicken items
+lst=['fry']
+lst1=['chicken']
+non_veg[~(non_veg['items'].isin(lst)) & ~(non_veg['nonveg'].isin(lst1))]
+Out[51]: 
+   nonveg   items
+1  mutton   curry
+4  mutton  khorma
+6     egg   curry
+9  mutton   mandi
+
+Q6>create a dataframe which contains either Fry or mutton items
+lst2=['fry']
+lst3=['mutton']
+
+non_veg[(non_veg['items'].isin(lst2)) | (non_veg['nonveg'].isin(lst3))]
+Out[52]: 
+    nonveg   items
+0  chicken     fry
+1   mutton   curry
+2     fish     fry
+4   mutton  khorma
+5   prawns     fry
+8   mutton     fry
+9   mutton   mandi
+
+
+5. Create a month_names.xlsx file (atleast 12 names, columns are MonthName*Season)
+Q1>create a dataframe which contains only winter season months
+months_df[months_df['seasons']=='Winter ']
+Out[8]: 
+     months  seasons
+0   january  Winter 
+1       feb  Winter 
+11      dec  Winter 
+12      NaN  Winter 
+
+Q2>create a dataframe which contains only summer season months
+months_df[months_df['seasons']=='summer']
+Out[12]: 
+  months seasons
+2  march  summer
+3  april  summer
+4    may  summer
+5   june  summer
+
+Q3>create a dataframe which contains only rainy season months
+months_df[months_df['seasons']=='raining']
+Out[14]: 
+  months  seasons
+6   july  raining
+7    aug  raining
+8    sep  raining
+9    oct  raining
+
+Q4>create a dataframe which contains only winter and summer season months
+
+lst1=["winter","summer"]
+
+months_df[months_df['seasons'].isin(lst1)]
+Out[14]: 
+     months seasons
+0   january  winter
+1       feb  winter
+2     march  summer
+3     april  summer
+4       may  summer
+5      june  summer
+10      nov  winter
+11      dec  winter
+
+Q5>create a dataframe which not contains summer and rainy season months
+
+months_df[months_df['seasons']=='winter']
+Out[12]: 
+     months seasons
+0   january  winter
+1       feb  winter
+10      nov  winter
+11      dec  winter
+
+Q6>create a dataframe which contains either winter or rainy items
+months_df[(months_df['seasons']=='winter') | (months_df['seasons']=='raining')]
+Out[15]: 
+     months  seasons
+0   january   winter
+1       feb   winter
+6      july  raining
+7       aug  raining
+8       sep  raining
+9       oct  raining
+10      nov   winter
+11      dec   winter
+
+
+
+
+
+6. Create a flower_names.xlsx file  (atleast 12 names, columns are FlowercolourName_in_English^FlowercolourName_in_Hindi^FlowercolourName_in_Telugu)
+Q1>create a dataframe which contains only red colour flower list
+flwrs[flwrs['clr names']=='red']
+Out[23]: 
+  clr names       english         hindi           telugu
+1       red      red rose   laal gulabi      yerupu roja
+2       red  red hibiscus  laal mandaar  yerupu mandaram
+
+Q2>create a dataframe which contains only white colour flower list
+flwrs[flwrs['clr names']=='white']
+Out[24]: 
+  clr names        english           hindi             telugu
+5     white  white jasmine  safaid jasmine  telupu mallepuvvu
+6     white    white lilly    safaid lilly  telupu lillypuvvu
+9     white     white rose  safaid gulaabi        telupu roja
+
+Q3>create a dataframe which contains only pink colour flower list
+flwrs[flwrs['clr names']=='pink']
+Out[25]: 
+  clr names       english            hindi                telugu
+4      pink     pink rose          gulaabi          gulaabi roja
+7      pink  pink hibscus  gulaabi mandaar      gulaabi mandaram
+8      pink    pink lotus    gulaabi lotus  gulaabi taamarapuvvu
+
+Q4>create a dataframe which contains only red and pink colour list
+lst=['red','pink']
+
+flwrs[flwrs['clr names'].isin(lst)]
+Out[26]: 
+  clr names       english            hindi                telugu
+1       red      red rose      laal gulabi           yerupu roja
+2       red  red hibiscus     laal mandaar       yerupu mandaram
+4      pink     pink rose          gulaabi          gulaabi roja
+7      pink  pink hibscus  gulaabi mandaar      gulaabi mandaram
+8      pink    pink lotus    gulaabi lotus  gulaabi taamarapuvvu
+
+
+Q5>create a dataframe which not contains red and white colour list
+lst1=["red","white"]
+
+
+flwrs[~flwrs['clr names'].isin(lst1)]
+Out[27]: 
+  clr names           english            hindi                telugu
+0    yellow       yellow rose     peela gulabi           pasupu roja
+3    yellow  yellow sunflower  peela sunflower  pasupu poddutirugudu
+4      pink         pink rose          gulaabi          gulaabi roja
+7      pink      pink hibscus  gulaabi mandaar      gulaabi mandaram
+8      pink        pink lotus    gulaabi lotus  gulaabi taamarapuvvu
+
+Q6>create a dataframe which contains either red or pink colour list
+lst2=['red','pink']
+
+flwrs[(flwrs['clr names'].isin(lst2)) | (flwrs['clr names'].isin(lst2))]
+Out[28]: 
+  clr names       english            hindi                telugu
+1       red      red rose      laal gulabi           yerupu roja
+2       red  red hibiscus     laal mandaar       yerupu mandaram
+4      pink     pink rose          gulaabi          gulaabi roja
+7      pink  pink hibscus  gulaabi mandaar      gulaabi mandaram
+8      pink    pink lotus    gulaabi lotus  gulaabi taamarapuvvu
+
+[or]
+
+flwrs[(flwrs['clr names']=='red')|(flwrs['clr names']=='pink')]
+Out[29]: 
+  clr names       english            hindi                telugu
+1       red      red rose      laal gulabi           yerupu roja
+2       red  red hibiscus     laal mandaar       yerupu mandaram
+4      pink     pink rose          gulaabi          gulaabi roja
+7      pink  pink hibscus  gulaabi mandaar      gulaabi mandaram
+8      pink    pink lotus    gulaabi lotus  gulaabi taamarapuvvu
+
+

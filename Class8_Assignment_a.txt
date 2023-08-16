@@ -1,0 +1,131 @@
+Task: Explore in Google and Make a document :
+
+1. What is pandas library in python? 
+Pandas is a Python library used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data.
+
+2. How to install library in python?
+pip install Lib-name
+
+3. what is package in pandas library?
+pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with “relational” or “labeled” data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real-world data analysis in Python.
+
+4. what are delimiter files?
+ Delimiters are used in programming languages to specify code set characters or data strings, serve as data and code boundaries and facilitate the interpretation of code and the segmentation of various implemented data sets and functions.
+
+A delimited file is a sequential file with column delimiters. Each delimited file is a stream of records, which consists of fields that are ordered by column. Each record contains fields for one row. Within each row, individual fields are separated by column delimiters.
+5. Write some delimiter files?
+
+Task: Create files and import in spyder and print data.
+
+1. Create a friend_names.csv file delimiter is comma(,)  (atleast 10 names, columns are FriendName,Quality)
+from pandas import read_csv,read_excel
+Text Type Model
+df=pd.read_csv(r"C:\\Users\\hp\\Documents\\Trainee\\Zubair\\friend_name.txt")
+df
+Output:
+  Friend Name      Quality
+0       Vinay      Builder
+1        Sita          Shy
+2         Ram        Funny
+3         Sai         Hero
+4       Komal      Poseman
+5        Arun       slient
+6       Pavan         Good
+7       Phani       Player
+8      Maruti  Intellegent
+9       Vamsi         Nice
+
+.CSV type model
+de=pd.read_csv(r"C:\\Users\\hp\\Documents\\Trainee\\Zubair\\friend_names.csv")
+de
+Output:
+  Friend Name      Quality
+0       Vinay      Builder
+1        Sita          Shy
+2         Ram        Funny
+3         Sai         Hero
+4       Komal      Poseman
+5        Arun       slient
+6       Pavan         Good
+7       Phani       Player
+8      Maruti  Intellegent
+9       Vamsi         Nice
+
+
+2. Create a family_members.txt file delimiter is star (*), (atleast 10 names, columns are FamilyMemberName*Relation)
+mn=pd.read_csv(r"C:\\Users\\hp\\Documents\\Trainee\\Zubair\\family_members.txt",sep='*')
+mn
+output:
+  Family member name        Relation
+0             Zaheer          father
+1             Zakiya          Mother
+2              Rokya          sister
+3              Afzal  Brother in law
+4             Zubair          Myself
+5            Naseena            Wife
+6               Zain             Son
+7             Zameer         Brother
+8            Shaheen   Sister in low
+
+3. Create a Vegfood_items.txt file delimiter is pipe (|), (atleast 10 names, columns are VegFoodName*Taste)
+ABCD=pd.read_csv(r"C:\\Users\\hp\\Documents\\Trainee\\Zubair\\Vegfood_items.txt",sep='|')
+ABCD
+Output:
+        Veg food            Taste
+0        Chapati           Tastey
+1   Aalu Paratha            Yummy
+2           Gobi           crispy
+3      Veg Pulao        delecious
+4      Kaju Rice  Yummy fragrance
+5  Paneer Masala            Juicy
+6    Veg Biryani              Wow
+
+
+4. Create a NonVegfood_items.txt file delimiter is pipe (|), (atleast 10 names, columns are NonVegFoodName*Taste)
+nvfood=pd.read_csv(r"C:\\Users\\hp\\Documents\\Trainee\\Zubair\\NonVegfood_items.txt",sep='|')
+nvfood
+Output:
+    NonVegFoodName         Taste
+0  Chicken Biryani  Mouth Watery
+1   Mutton Biryani       Mummmmm
+2    Chicken Curry     Delecious
+3      Chicken Fry         Spicy
+4         Tandoori   Full Masala
+5            Mandi        Spices
+6   Butter Chicken         Juciy
+
+5. Create a month_names.txt file delimiter is and (&), (atleast 12 names, columns are MonthName*Season)
+months=pd.read_csv(r"C:\\Users\\hp\\Documents\\Trainee\\Zubair\\month_names.txt",sep='&')
+months
+Output
+   Month Name  Season
+0     January  Winter
+1    February  Winter
+2       March  Spring
+3       APril  Spring
+4         May  Spring
+5        June  Summer
+6        July  Summer
+7      August  Summer
+8   September  Autumn
+9     October  Autumn
+10   November  Autumn
+11   December  Winter
+
+6. Create a colours_names.txt file delimiter is cap (^), (atleast 12 names, columns are colourName_in_English^colourName_in_Hindi^colourName_in_Telugu)
+Colours=pd.read_csv(r"C:\\Users\\hp\\Documents\\Trainee\\Zubair\\Colour_Names.txt",sep='^')
+Colours
+Output
+   colourName_in_English colourName_in_Hindi colourName_in_Telugu
+0                    Red                Laal               Yerupu
+1                 Orange             Santari             Kashayam
+2                 Yellow               Peela               Pasupu
+3                  Green                Hara               Pachha
+4                   Blue               Neela               Neelam
+5                 Indigo                Shai               Telidu
+6                 Violet              Telidu               Telidu
+7                 Purple             Baigani              vankaya
+8                  balck               Kaala               Nalupu
+9                  white              Safede               Telupu
+10                 brown              Telidu               Telidu
+11                  grey               Bhura               Telidu

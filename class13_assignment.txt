@@ -1,0 +1,454 @@
+Task: Explore in Google and Make a document :
+
+1. what is summary/summarization in pandas dataframe
+
+Summarize. Summarization includes counting, describing all the data present in data frame. We can summarize the data present in the data frame using describe() method. This method is used to get min, max, sum, count values from the data frame along with data types of that particular column.
+
+2. Types of Summarization techniques?
+
+There are two types of summarization: extractive and abstractive. Extractive summarization selects a subset of sentences from the text to form a summary; abstractive summarization reorganizes the language in the text and adds novel words/phrases into the summary if necessary.
+
+
+
+
+
+
+Task: create a program
+Q1>Create and import file
+1. Create schoolmets and collegements friends_names.xls file and import file in spyder (atleast 10 names, columns are FriendName,Quality) ,
+2. Summarize data by quality wise no.of friends .
+Example: quality | no.of freind
+			funny | 2
+
+import pandas as pd
+
+df1=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\friends sum.xlsx",sheet_name='Sheet3')
+
+df1.groupby('quality')['friendsname'].count()
+Out[3]: 
+quality
+cool           2
+cute           1
+funny          2
+intelligent    2
+silent         2
+Name: friendsname, dtype: int64
+
+Q2>Create and import file
+1. Create boys Boysfriend_names.xls file and import file in spyder (atleast 10 names, columns are FriendName,Quality) 
+
+bf=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\friends b&g.xlsx")
+
+bf
+Out[8]: 
+    bf names      quality
+0    santosh       active
+1      anwar     talktive
+2     dinesh       silent
+3  parmaatma         cool
+4      khaja  intelligent
+5      imran    sensitive
+6      razak        smart
+7       jabi        anger
+8     kalaam       dancer
+9     roshan      foolish
+
+
+2. Summarize data by quality wise no.of friends .
+
+bf.groupby('quality')['bf names'].count()
+Out[9]: 
+quality
+active         1
+anger          1
+cool           1
+dancer         1
+foolish        1
+intelligent    1
+sensitive      1
+silent         1
+smart          1
+talktive       1
+Name: bf names, dtype: int64 
+
+
+3. Create girls Girlsfriend_names.xls file  and import file in spyder (atleast 10 names, columns are FriendName,Quality)
+
+gf=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\friends b&g.xlsx",sheet_name='Sheet2')
+
+gf
+Out[11]: 
+  gf names      quality
+0  shabana        smart
+1  jaisree       active
+2   anusha       silent
+3  parveen     talktive
+4   gowsia      foolish
+5    divya  intelligent
+6    afzal       active
+7   geetha        smart
+8  haarika     talktive
+9  kranthi      foolish
+ 
+4. Summarize data by quality wise no.of friends .
+gf.groupby('quality')['gf names'].count()
+Out[12]: 
+quality
+active         2
+foolish        2
+intelligent    1
+silent         1
+smart          2
+talktive       2
+Name: gf names, dtype: int64
+
+
+Q3>Create and import file
+1. Create a father side fatherfamily_members.xls file and import file in spyder  (atleast 5 names, columns are FamilyMemberName*Relation)
+fs=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\f&m sum.xlsx")
+
+fs
+Out[14]: 
+   f side      relation
+0  tahera     grand mom
+1   munnu  dadyungr bro
+2  johari  dadyungr bro
+3   siraj       dad sis
+4  hafeez  dadyungr sis
+5   hannu     grand paa
+6   ayyub         uncle
+7   aslam         uncle
+8   razak   dad big bro
+9  shukur  dad broinlaw
+
+2. Summarize data by relation wise no.of familymembers .
+
+fs.groupby('relation')['f side'].count()
+Out[15]: 
+relation
+dad big bro     1
+dad broinlaw    1
+dad sis         1
+dadyungr bro    2
+dadyungr sis    1
+grand mom       1
+grand paa       1
+uncle           2
+Name: f side, dtype: int64
+
+3. Create a mother side montherfamily_members.xls file and import file in spyder  (atleast 5 names, columns are FamilyMemberName*Relation)
+
+ms=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\f&m sum.xlsx",sheet_name='Sheet2')
+
+ms
+Out[16]: 
+        m side         relation
+0        atiya          mom sis
+1       feroza          mom sis
+2       shukur          mom bro
+3       jabbar          mom bro
+4       zubair          mom bro
+5      zeenath        mom aunty
+6       zamrud        mom aunty
+7    f rehmaan        grand paa
+8  ameerunnisa        grand maa
+9       inayat  small grand paa
+
+4. Summarize data by relation wise no.of familymembers 
+
+ms.groupby('relation')['m side'].count()
+Out[17]: 
+relation
+grand maa          1
+grand paa          1
+mom aunty          2
+mom bro            3
+mom sis            2
+small grand paa    1
+Name: m side, dtype: int64
+
+
+Q4>Create and import file
+1. Create a Dal related  dal_items.xlsx file and import file in spyder (atleast 5 names, columns are VegFoodName*Taste)
+
+dal=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\dal&veg.xlsx")
+dal
+Out[18]: 
+       vegitem        taste
+0   tomato dal        spicy
+1    kaddu dal  sweet taste
+2   masoor dal     testless
+3  kankadi dal        spicy
+4    moong dal  sweet taste
+
+2. Summarize data by taste wise no.of fooditems.
+
+dal.groupby('taste')['vegitem'].count()
+Out[19]: 
+taste
+spicy          2
+sweet taste    2
+testless       1
+Name: vegitem, dtype: int64
+
+3. Create a vegitable related  vegitable_items.xlsx file and import file in spyder (atleast 5 names, columns are VegFoodName*Taste)
+
+veg=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\dal&veg.xlsx",sheet_name='Sheet2')
+
+veg
+Out[21]: 
+        vegitem              taste
+0       potato    sweet mild taste
+1       pumpkin  earthy sweet flvr
+2          peas  sweet and savoury
+3        tomato              tangy
+4  sweet potato              sweet
+
+4. Summarize data by taste wise no.of fooditems.
+veg.groupby('taste')['vegitem'].count()
+Out[22]: 
+taste
+earthy sweet flvr    1
+sweet                1
+sweet and savoury    1
+sweet mild taste     1
+tangy                1
+Name: vegitem, dtype: int64
+
+
+Q5>Create and import file
+1. Create a soups related  soups_items.xlsx file and import file in spyder (atleast 5 names, columns are soups*Taste)
+
+sp=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\soup&fry sum.xlsx")
+
+sp
+Out[24]: 
+           soup  taste
+0   tomato soup  yummy
+1     corn soup    hot
+2  chicken soup   cool
+3   mixveg soup  spicy
+4   mutton soup    hot
+
+2. Summarize data by taste wise no.of fooditems.
+
+sp.groupby('taste')['soup'].count()
+Out[25]: 
+taste
+cool     1
+hot      2
+spicy    1
+yummy    1
+Name: soup, dtype: int64
+
+3. Create a fry related  fry_items.xlsx file and import file in spyder (atleast 5 names, columns are fry*Taste)
+
+fy=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\soup&fry sum.xlsx",sheet_name='Sheet2')
+
+fy
+Out[27]: 
+            fry   taste
+0    bhendi fry  crispy
+1  chilly bajji    oily
+2   chicken fry   super
+3   brinjal fry    oily
+4      fish fry  crispy
+
+4. Summarize data by taste wise no.of fooditems.
+
+fy.groupby('taste')['fry'].count()
+Out[28]: 
+taste
+crispy    2
+oily      2
+super     1
+Name: fry, dtype: int64
+
+
+Q6>Create and import file
+1. Create a Chicken related chicken_items.xlsx file and import file in spyder (atleast 5 names, columns are NonVegFoodName*Taste)
+
+
+chk=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\nonvegitem.xlsx")
+
+chk
+Out[33]: 
+        nonveg item   taste
+0       chicken fry  crispy
+1  chicken tandoori   spicy
+2   chicken  khorma   spicy
+3   chicken biryani    oily
+4   chicken showrma  chezzi
+
+2. Summarize data by taste wise no.of fooditems.
+
+chk.groupby('taste')['nonveg item'].count()
+Out[35]: 
+taste
+chezzi    1
+crispy    1
+oily      1
+spicy     2
+Name: nonveg item, dtype: int64
+
+3. Create a mutton related mutton_items.xlsx file and import file in spyder (atleast 5 names, columns are NonVegFoodName*Taste)
+
+mtn=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\nonvegitem.xlsx",sheet_name='Sheet2')
+
+mtn
+Out[37]: 
+      nonveg item  taste
+0  mutton biryani   oily
+1    mutton mandi  spicy
+2    mutton curry   oily
+3     mutton soup    hot
+4   mutton taheri  spicy
+
+4. Summarize data by taste wise no.of fooditems.
+
+mtn.groupby('taste')['nonveg item'].count()
+Out[38]: 
+taste
+hot      1
+oily     2
+spicy    2
+Name: nonveg item, dtype: int64
+
+
+
+Q7>Create and import file
+1. Create a winter season  winterseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+
+import pandas as pd
+
+df=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\seasons.xlsx")
+
+df
+Out[3]: 
+     months seasons
+0  november  winter
+1  december  winter
+2   january  winter
+
+2. Summarize data by Season wise no.of months.
+
+df.groupby('seasons')['months'].count()
+Out[4]: 
+seasons
+winter    3
+Name: months, dtype: int64
+
+3. Create a summer season  summerseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+
+df1=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\seasons.xlsx",sheet_name='Sheet2')
+
+df1
+Out[6]: 
+   months seasons
+0  april   summer
+1     may  summer
+2    june  summer
+
+4. Summarize data by Season wise no.of months.
+df1.groupby('seasons')['months'].count()
+Out[8]: 
+seasons
+summer    3
+Name: months, dtype: int64
+
+5. Create a rainy season  rainyseason_names.xlsx file and import file in spyder  (atleast 2 names, columns are MonthName*Season)
+
+df2=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\seasons.xlsx",sheet_name='Sheet3')
+df2
+Out[10]: 
+      months seasons
+0     august   rainy
+1  september   rainy
+2    october   rainy
+
+6. Summarize data by Season wise no.of months.
+
+df2.groupby('seasons')['months'].count()
+Out[11]: 
+seasons
+rainy    3
+Name: months, dtype: int64
+
+Q8>Create and import file
+1. Create a red colour flowers redflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+
+df=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\colours sum.xlsx")
+
+df
+Out[13]: 
+     flowers colours
+0       rose     red
+1  hibiscuss     red
+2  amaryllis     red
+
+2. Summarize data by color wise no.of flowers.
+
+df.groupby('colours')['flowers'].count()
+Out[14]: 
+colours
+red    3
+Name: flowers, dtype: int64
+
+3. Create a white colour flowers whiteflowers_names.xlsx file  and import file in spyder  (atleast 3 names, columns are FlowerName*color)
+
+df3=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\colours sum.xlsx",sheet_name='Sheet4')
+
+df3
+Out[23]: 
+   flowers colours
+0  jasmine   white
+1    lilly   white
+2     rose   white
+
+4. Summarize data by color wise no.of flowers.
+
+df3.groupby('colours')['flowers'].count()
+Out[24]: 
+colours
+white    3
+Name: flowers, dtype: int64
+
+5. Create a pink colour flowers whiteflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+
+df2=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\colours sum.xlsx",sheet_name='Sheet3')
+
+df2
+Out[20]: 
+     flowers colours
+0  carnation    pink
+1       rose    pink
+2   dianthus    pink
+
+6. Summarize data by color wise no.of flowers.
+
+df2.groupby('colours')['flowers'].count()
+Out[21]: 
+colours
+pink    3
+Name: flowers, dtype: int64
+
+7. Create a yellow colour flowers whiteflowers_names.xlsx file and import file in spyder   (atleast 3 names, columns are FlowerName*color)
+
+df1=pd.read_excel(r"C:\Users\hp\Documents\Trainee\nasheenazubair\assignment13 practise\colours sum.xlsx",sheet_name='Sheet2')
+
+df1
+Out[16]: 
+     flowers colours
+0  sunflower  yellow
+1       rose  yellow
+2   marigold  yellow
+
+8. Summarize data by color wise no.of flowers.
+
+df1.groupby('colours')['flowers'].count()
+Out[18]: 
+colours
+yellow    3
+Name: flowers, dtype: int64
+
+

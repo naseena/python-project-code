@@ -1,0 +1,167 @@
+Task_1: Explore in Google and Make a document :
+
+1. Why we use conditions:
+Conditions allow us to control what the program does and perform different actions based on these “if, then” logic statements. 
+
+2. Difference between if and elif?
+if= this condition is used only for one condition.
+elif=this condition is used when conditions are more that two.
+
+3. What is difference between operator and variable?
+Operators: In Python, operators are special symbols that designate that some sort of computation should be performed. EXamples: <,>,=,+
+Variables:A Variable is nothing but a programming element used to define, store, and perform operations on the input data. Python variables are of four different types: Integer, Float, and String.
+
+4. What is indentation?how many tab spaces it will take?
+Indentation refers to the spaces at the beginning of a code line.  It will take 4 spaces.
+ 
+ 
+5. How to write if block (syntax)?
+   if condition:
+        <expression>
+
+Task_2:
+
+Write a program,  my age is more than 20 print teen_age other wise print younge_age?
+
+	a.my_age is 20, who am i? Expected output: you are teen_age-------------
+       Age=20
+if Age<=20:
+    print("your are","Teen_Age")
+    
+else:
+    print("your are","Young_Age")
+Output= You are Teen_Age
+
+b.my_age is 30, who am i? Expected output: you are younge_age------------
+Age=30
+if Age<=20:
+    print("your are","Teen_Age")
+    
+else:
+    print("your are","Young_Age")
+Output: You are Young_Age
+
+	
+	c.my_age is 10, who am i? --------------
+Age=10
+if Age<=20:
+    print("you are","Teen_Age")
+    
+else:
+    print("You are","Young_Age")
+Output: You are Teen_Age
+
+	d.my_age is 40, who am i? ----------------
+Age=40
+if Age<=20:
+    print("you are","Teen_Age")
+    
+else:
+    print("You are","Young_Age")
+Output: You are Young_Age
+
+Write a program today is Monday/Tuesday/Wendsday/Thursday/Friday print weekday otherwise print weekend?-----------------redo
+ lst_mnts=["Monday","Tuesday","Wendsday","Thursday","Friday","Saturday","Sunday"]
+
+for p in lst_mnts:
+    print(p)
+    if p=="Monday":
+        print("--------------weekday")
+    elif p=="Tuesday":
+        print("---------weekday")
+    elif p=="Wendsday":
+        print("--------weekday")
+    elif p=="Thursday":
+        print("---------weekday")
+    elif p=="Friday":
+        print("----------weekday")
+    else:
+        print("---------weekend")
+
+
+Task_3: 
+
+Scenario1: Today my business income is 10/- if my income is more than 10/- then print "i am profitable" otherwise print "i lost"
+ఈ రోజు నా ఆదాయం 10. నా ఆదాయం 10 కంటే ఎక్కువ ఉంటే ప్రింట్ నేను లాభదాయకంగా ఉన్నాను లేకపోతే నేను పోగొట్టుకున్నాను.
+Income=10
+if Income>=10:
+    print("I am Profitable")
+else:
+    print("I lost")
+Output: I am Profitable
+
+
+Scenario2: your age is more than your sister age then print "i am elder" otherwise print "i am younger"
+మీ వయస్సు మీ సోదరి వయస్సు కంటే ఎక్కువగా ఉంటే, నేను పెద్దవాడిని అని ముద్రించండి లేకపోతే నేను చిన్నవాడిని అని ముద్రించండి
+sister_age=33
+if sister_age>33:
+    print("i am elder")
+else:
+    print("i am younger")
+Output: i am younger
+
+Scenario3:festival offer in my shop. 
+purchase amount more than 100 then print 30% discount.
+ purchase amount less than 50 then print 10% discount 
+ otherwise print 20% discount.	
+ నా దుకాణంలో పండుగ ఆఫర్. కొనుగోలు మొత్తం 100 కంటే ఎక్కువ, ఆపై ప్రింట్ 30% తగ్గింపు. 50 కంటే తక్కువ మొత్తాన్ని కొనుగోలు చేసి, ఆపై 10% తగ్గింపును ప్రింట్ చేయండి లేకపోతే 20% తగ్గింపును ప్రింట్ చేయండి
+ मेरी दुकान में त्योहार की पेशकश। खरीद राशि 100 से अधिक तो 30% छूट प्रिंट करें। खरीद राशि 50 से कम है तो 10% छूट प्रिंट करें अन्यथा 20% छूट प्रिंट करें।
+ Purchase_Amount=100
+if Purchase_Amount>100:
+    print("30% discount")
+elif Purchase_Amount<50:
+    print("10% discount")
+else:
+    print("20% discount")
+Output: 20% discount
+ 
+ Scenario4:my movie theater prices. price is 140 print balcony. price is 50 print chair. price is 100 print bench
+ 
+నా సినిమా థియేటర్ ధరలు. ధర 140 ప్రింట్ బాల్కనీ. ధర 50 ప్రింట్ కుర్చీ. ధర 100 ప్రింట్ బెంచ్
+Movie_Theater_Prices=[140,50,100]
+for p in Movie_Theater_Prices:
+    print(p)
+    if p==140:
+        print("Balcony")
+    elif p==50:
+        print("Chair")
+    else:
+        print("Bench")
+Output:
+140
+Balcony
+50
+Chair
+100
+Bench
+
+Scenario5: my showroom vehicle types. 
+if vehicle type is two wheeler print bike and scooty. 
+if vehicle type is four wheeler print car, loory, van and zeep
+నా షోరూమ్ వాహనాల రకాలు. వాహనం రకం టూ వీలర్ ప్రింట్ బైక్ మరియు స్కూటీ అయితే. వాహనం రకం ఫోర్ వీలర్ ప్రింట్ కారు అయితే, లూరీ, వ్యాన్ మరియు జీప్
+ 
+vehicle="car"
+if vehicle=="bike" or vehicle=="scooty":
+    print("Two Wheeler")
+elif vehicle=="car" or vehicle=="lorry" or vehicle=="van" or vehicle=="Jeep":
+    print("four wheeler")
+Output:
+four wheeler
+
+or 
+
+lst=["car","bike,scooty","lorry","van","jeep"]
+for p in lst:
+    print(p)
+    if p=="car":
+        print("four wheeler")
+    elif p=="bike":
+        print("two wheeler")
+    elif p=="scooty":
+        print("two wheeler")
+    elif p=="lorry":
+        print("four wheeler")
+    elif p=="van":
+        print("four wheeler")
+    elif p=="jeep":
+        print("four wheeler")

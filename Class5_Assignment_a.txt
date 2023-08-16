@@ -1,0 +1,131 @@
+Task: Explore in Google and Make a document :
+
+1. What is dict in python?
+The dict() function creates a dictionary. A dictionary is a collection which is unordered, changeable and indexed.
+
+2. Types of dict in python?
+The type dict is a generic class, signified by type arguments within [...] . For example, dict[int, str] is a dictionary from integers to strings and dict[Any, Any] is a dictionary of dynamically typed (arbitrary) values and keys
+There are 4 types of dictionaries in Python:
+OrderedDict.
+DefaultDict.
+ChainMap.
+Counter.
+
+3. What is slicing in dict in python?
+Obtaining the subsets of the dictionary using the key-value pairs. 
+
+Tasks:
+
+3. Create a dict with your family members(at least 10 names)?
+expected output : { "family_members" : your family member details}
+dict={"Family_members":["Zah","Zak","Rok","Afzal","Zub","Nas","Zam","Shah","Zain"]}
+Output: {'Family_members': ['Zah',
+  'Zak',
+  'Rok',
+  'Afzal',
+  'Zub',
+  'Nas',
+  'Zam',
+  'Shah',
+  'Zain']}
+
+4: Create a dict with your family members and relations(at least 10 names and relations)?
+Expected output: { "family_members" : your family member details , "relations": your relation with your family member}
+dict={"Family_Names":["Zah","Zak","Rok","Afzal","Zub","Nas","Zam","Shah","Zain"],"Relation":["Dad","Mom","Sis"," Bro In Law","Myself","Wife","Younger Bro","Sis In Law","Son"]}
+Output: {'Family_Names': ['Zah',
+  'Zak',
+  'Rok',
+  'Afzal',
+  'Zub',
+  'Nas',
+  'Zam',
+  'Shah',
+  'Zain'],
+ 'Relation': ['Dad',
+  'Mom',
+  'Sis',
+  ' Bro In Law',
+  'Myself',
+  'Wife',
+  'Younger Bro',
+  'Sis In Law',
+  'Son']}
+
+write a program to print your father name?
+dict["Family_Names"][0],dict["Relation"][0]
+Output: ('Zah', 'Dad')
+
+write a program to print your favorite family member name?
+dict["Family_Names"][0],dict["Relation"][0]
+Output: ('Zah', 'Dad') 
+or
+print("my favourite family member is",dict["Relation"][0], ",he is",dict["Family_Names"][0],)
+Output: my favourite family member is Dad ,he is Zah
+
+5: Create a your friend names and their quality(at least 10 names)?
+Expected output: {"friend_names" : your friend names, "quality" : your friend quality}
+Example output: {"friend_names": ["ravi","shekar", "abbas","jhonny"], "quality" : ["talk active", "anger", "intelligent", "funny"]}
+dict={"friend_Names":["Sita","Gita","Rita","Sai","Ram","Vinay","ramesh","Komal","Hye","Imran"],"Quality":["Smart","Foolish","Sensitive","Possesive","Aggressive","Mental","Foody","Lover","Jymboy","Intelligent"]}
+Output: {'friend_Names': ['Sita',
+  'Gita',
+  'Rita',
+  'Sai',
+  'Ram',
+  'Vinay',
+  'ramesh',
+  'Komal',
+  'Hye',
+  'Imran'],
+ 'Quality': ['Smart',
+  'Foolish',
+  'Sensitive',
+  'Possesive',
+  'Aggressive',
+  'Mental',
+  'Foody',
+  'Lover',
+  'Jymboy',
+  'Ingtelligent']}
+
+write a program to print your intelligent friend name?
+print("my Intelligent friend name is",dict["friend_Names"][9])
+Output:my Intelligent friend name is Imran
+
+write a program to print your best friend name?
+print("My Best friend name is",dict["friend_Names"][7])
+Output:My Best friend name is Komal
+
+
+6: Create a your favorite food names and your rating(at least 10 names)?
+Expected output: {"veg_items" : food names, "rating" : your rating}
+{"nonveg_items" : food names, "rating" : your rating}
+write a program to print your rating 1 food name?
+Solution:
+dict={"Veg_Items":["Rice","Veg Biryani","Paneer Curry","Chapati","Kaju Rice","Veg Noodles"],"Ratings":[6,1,4,5,2,3]}
+Output=print(dict)
+print(dict)={'Veg_Items': ['Rice', 'Veg Biryani', 'Paneer Curry', 'Chapati', 'Kaju Rice', 'Veg Noodles'], 'Ratings': [6, 1, 4, 5, 2, 3]}
+                                          AND
+dict1={"Non_Veg":["Chicken","Motton","Chicken Biryani","Mandi","tahari"],"ratings":[1,2,3,4,5]}
+Output=print(dict)
+{'Non_Veg': ['Chicken', 'Motton', 'Chicken Biryani', 'Mandi', 'tahari'], 'ratings': [1, 2, 3, 4, 5]}
+
+                                    or
+print(dict)
+print(dict1)
+Output=
+{'Veg_Items': ['Rice', 'Veg Biryani', 'Paneer Curry', 'Chapati', 'Kaju Rice', 'Veg Noodles'], 'Ratings': [6, 1, 4, 5, 2, 3]}
+{'Non_Veg': ['Chicken', 'Motton', 'Chicken Biryani', 'Mandi', 'tahari'], 'ratings': [1, 2, 3, 4, 5]}
+
+
+7: Create a your favorite destination(cities) names and your rating(at least 10 names)?
+Expected output: {"destination" : cities name, "rating" : your rating}
+Solution:
+favourite_destinations={"destinations":["HYD","Sec","Blore","MTM","BZA","VSKP","Pune","GGN","Noida","Chennai"], "Ratings":[10,5,6,9,7,8,4,2,3,1]}
+
+8: Create a your favorite destination(cities) names and your rating(at least 10 names)?
+Expected output: {"destination" : cities name, "rating" : your rating}
+favourite_destinations={"destinations":["HYD","Sec","Blore","MTM","BZA","VSKP","Pune","GGN","Noida","Chennai"], "Ratings":[10,5,6,9,7,8,4,2,3,1]}
+
+write a program to print your rating 3 city name? 
+print(favourite_destinations["destinations"][-2])
+Output=Noida

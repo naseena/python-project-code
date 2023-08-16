@@ -1,0 +1,116 @@
+Task: Explore in Google and Make a document :
+
+1. What is function in python?
+A function is a block of code which only runs when it is called.
+
+2. Types of function in python?
+Python Built-in Functions.
+Python Recursion Functions.
+Python Lambda Functions.
+Python User-defined Functions.
+
+3. What is user define function in python?
+Function which we define for a particular task is known as used defined funcitons.
+
+4. What is built in funciton in python?
+Function which is already coded or already defined and ready for use.
+
+5. What is spyder tool in python & Why we use it?
+Spyder is an open-source cross-platform integrated development environment (IDE) for scientific programming in the Python language.
+Spyder is a multi-platform IDE, so you can install it on Windows, Mac, and Linux operating systems as a comprehensive development tool. It also provides advanced analysis, debugging, editing, and profiling for data exploration, deep inspection, interactive execution, and data visualization.
+
+6. What is parameter in function?
+A parameter is the variable listed inside the parentheses in the function definition. An argument is the value that is sent to the function when it is called.
+
+Task: Write a program to create a function.
+
+Scenario1:
+credit card offer.
+ if your salary is less than 10000.  credit limit 10 times of your salary. 
+ if your salary is 10000 to 30000.  Credit limit is 20 time of your salary.
+ if your salary is more than 30000.  Credit limit is 30 times of your salary.
+ క్రెడిట్ కార్డ్ ఆఫర్. 
+ మీ జీతం 10000 కంటే తక్కువ ఉంటే. క్రెడిట్ పరిమితి మీ జీతంకి 10 రెట్లు. 
+ మీ జీతం 10000 నుండి 30000 వరకు ఉంటే. క్రెడిట్ పరిమితి మీ జీతంలో 20 రెట్లు .
+ మీ జీతం 30000 కంటే ఎక్కువ ఉంటే క్రెడిట్ పరిమితి మీ జీతం కంటే 30 రెట్లు.
+Programme
+def Credit_Card_Offer(salary,Credit_limit):
+    if salary<10000:
+        Credit_limit=salary*10
+    elif  salary>=10000 and salary<=30000:
+        Credit_limit=salary*20
+    elif salary>30000:
+        Credit_limit=salary*30
+    return Credit_limit
+
+Credit_Card_Offer(35000,2)
+
+Output:
+Credit_Card_Offer(35000,2)
+1050000
+ 
+ 
+ Scenario2:
+ DMart discount offer. 
+ if your purchase amount is less than 20000. discount is 20%.
+if your purchase amount is 20000 to 40000. discount is 30%. 
+if your purchase amount is more than 50000. discount is 40%.
+
+DMart తగ్గింపు ఆఫర్. మీ కొనుగోలు మొత్తం 20000 కంటే తక్కువ ఉంటే. తగ్గింపు 20%.
+మీ కొనుగోలు మొత్తం 20000 నుండి 40000 వరకు ఉంటే. తగ్గింపు 30%. 
+మీ కొనుగోలు మొత్తం 50000 కంటే ఎక్కువ ఉంటే. తగ్గింపు 40%.
+Model -1=Only Discount Amount
+def DMart_Discount_Offer(purchase_amount,discount):
+    if purchase_amount<20000:
+        discount=purchase_amount*0.2
+    elif purchase_amount>=20000 and purchase_amount<=40000:
+        discount=purchase_amount*0.3
+    elif purchase_amount>50000:
+        discount=purchase_amount*0.4
+    return discount
+DMart_Discount_Offer(51000,10)
+
+Model-2=total discounted amount
+def DMart_Discount_Offer(purchase_amount,discount):
+    if purchase_amount<20000:
+        discount=purchase_amount-purchase_amount*0.2,
+    elif purchase_amount>=20000 and purchase_amount<=40000:
+        discount=purchase_amount-purchase_amount*0.3
+    elif purchase_amount>50000:
+        discount=purchase_amount-purchase_amount*0.4
+    return discount
+DMart_Discount_Offer(21000,10)
+
+Model 3=Display Discount
+def DMart_Discount_Offer(purchase_amount,discount):
+    if purchase_amount<20000:
+        discount="20%"
+    elif purchase_amount>=20000 and purchase_amount<=40000:
+        discount="30%"
+    elif purchase_amount>50000:
+        discount="40%"
+    return discount
+DMart_Discount_Offer(51000,0)
+
+Scenario3:
+Amazom online offer. 
+if product is electoric type then 20% discount. 
+if product is cloth type then 30% discount. 
+if product is footware then 40% discount.
+Amazom ఆన్‌లైన్ ఆఫర్.
+ ఉత్పత్తి ఎలక్టోరిక్ రకం అయితే 20% తగ్గింపు. 
+ ఉత్పత్తి వస్త్రం రకం అయితే 30% తగ్గింపు. 
+ ఉత్పత్తి ఫుట్‌వేర్ అయితే 40% తగ్గింపు.
+def Amazon_Online_Offer(product_type,discount):
+    if product_type=="electornic":
+        discount="20%"
+    elif product_type=="cloth":
+        discount="30%"
+    elif product_type=="footware":
+        discount="40%"
+    return discount
+    
+    Amazon_Online_Offer("footware",0)
+Output:'40%'
+
+ 

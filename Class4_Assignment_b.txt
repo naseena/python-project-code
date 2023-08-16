@@ -1,0 +1,101 @@
+
+Tasks:
+
+1. Create a 10 variables with your friend names?
+   Friend_names="Sita","Gita","Rita","Sai","Ram","Vinay","ramesh","Komal","Hye","Imran"
+
+2. Create a 10 variables with your family member names?
+   Family_Member_Names="Zah","Zak","Rok","Afzal","Zub","Nas","Zam","Shah"
+
+3. Create a 10 variables with favorite food names?
+Favourite_food_Names="Rice","Roti","Chicken","Mutton","Biryani", "Pulao"
+
+4. Create a 10 variables with colour  names?
+Colour_Names="Red","Blue","Green","Yellow","Orange","Pink"
+
+5. Create a 12 variables with month  names?
+Months_Names="Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"
+
+6. Create a 10 variables with game  names?
+Game_Names="Dave","Mario","Super Contra","Cricket", "Volley Ball","Batmeinton","Rugby","Golf"
+
+7. Create a 10 variables with city  names?
+City_Name="Hyderabad","Secunderabad","Bengalore","Chennai","Cochi"
+
+8. Create a list (friend_names) with your friend names (10 names)?
+Friend_names=["Sita","Gita","Rita","Sai","Ram","Vinay","ramesh","Komal","Hye","Imran"]
+
+9. Create a tuple (family_members) with your family members?
+Family_Members=("Zah","Zak","Rok","Afzal","Zub","Nas","Zam","Shah")
+
+10. Create a set (colours) with colour names(10 names)?
+Colour_Names={"Red","Blue","Green","Yellow","Orange","Pink"}
+
+11. month_names=[1,9,10,5,3,2,7,8,6,4] , sort the list--> write a program?
+expected output: month_names=[1,2,3,4,5,6,7,8,9,10]
+set_seq=set(month_names)
+set_set
+Output is ---------{1,2,3,4,5,6,7,8,9,10}
+
+12. tollywood_heros=["chiru", "balaya", "nag","venky","powerstar","superstar","ntr","ramcharan"], write a program?
+expected output:tollywood_heros=["chiranjeevi", "balakrishan", "nagarjuna","venky","pawan kalyan","maheshbabu","NT rama rao","ramcharan"]
+Solution:
+dict={"tollywood_heros":["chiru", "balaya", "nag","venky","powerstar","superstar","ntr","ramcharan"]}
+dict["tollywood_heros"][0:7]=["chiranjeevi", "balakrishan", "nagarjuna","venky","pawan kalyan","maheshbabu","NT rama rao","ramcharan"]
+dict
+Output:
+{'tollywood_heros': ['chiranjeevi',
+  'balakrishan',
+  'nagarjuna',
+  'venky',
+  'pawan kalyan',
+  'maheshbabu',
+  'NT rama rao',
+  'ramcharan',
+  'ramcharan']}
+
+13. bollywood_heros=["sharukkhan", "salmankhan", "salmankhan","amirkhan","HrithikRoshan","Amitabh Bachchan","Akshay Kumar","amirkhan"], write a program to remove duplicates?
+bollywood_heros={"sharukkhan", "salmankhan", "salmankhan","amirkhan","HrithikRoshan","Amitabh Bachchan","Akshay Kumar","amirkhan"}
+Solution:
+seq_set=set(bollywood_heros)
+seq_set
+Output:
+{'Akshay Kumar',
+ 'Amitabh Bachchan',
+ 'HrithikRoshan',
+ 'amirkhan',
+ 'salmankhan',
+ 'sharukkhan'}
+
+or
+
+bollywood_heros={"sharukkhan", "salmankhan", "salmankhan","amirkhan","HrithikRoshan","Amitabh Bachchan","Akshay Kumar","amirkhan"}
+Output:
+{'Akshay Kumar',
+ 'Amitabh Bachchan',
+ 'HrithikRoshan',
+ 'amirkhan',
+ 'salmankhan',
+ 'sharukkhan'}
+
+14. breakfast_items=["upma","dosa","idly","puri","punugulu","roti","chapathi", "parota","mysoor baji","minapa baji"], print your favorite breakfast itme?
+example: My Favorite breakfast item is mysoor baji
+print("My Favorite breakfast item is",breakfast_items[-2])
+
+
+Explore in google and make a document:
+15. What is function in python?
+A function is a block of code which only runs when it is called. You can pass data, known as parameters, into a function. A function can return data as a result.
+
+16. What is type function in python?
+Python type() is a built-in function that is used to return the type of data stored in the objects or variables in the program.
+
+17. what is print function in python?
+The print() function prints the specified message to the screen, or other standard output device. The message can be a string, or any other object, the object will be converted into a string before written to the screen.
+
+18. what is overwriting in python?
+Replacing old contents of the data with new content.
+
+
+
+

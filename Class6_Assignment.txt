@@ -1,0 +1,166 @@
+Task: Explore in Google and Make a document :
+
+1. Why we use loops?
+  To execute a block of code repeatedly
+
+2 What is while loop?
+ Python while loop is used to run a block code until a certain condition is met. The syntax of while loop is: while condition: # body of while loop. Here, A while loop evaluates the condition. If the condition evaluates to True , the code inside the while loop is executed.
+
+3. What is iterator in loop?
+An iterator is an object representing a stream of data.
+
+4. What is increment in loop?
+Increment is an expression that determines how the loop control variable is incremented each time the loop repeats successfully (that is, each time condition is evaluated to be true).
+
+5. why we use range function?
+It is used to generate a sequence of numbers as per the requirement.
+
+6. Create a list(friend_names) with your friends names(atleaste 10 names)?
+print all names with in loop 
+Expected Output: my friend name is "ravi"
+		     my friend name is "shanker"
+Programme:
+friend_names=["Ram","Vinay","Komal","Arun","Vikash","Chandra","Imran","Manish","Ian","Hari"]
+for p in friend_names:
+    print("My friend name is ", p)
+Output:
+My friend name is  Ram
+My friend name is  Vinay
+My friend name is  Komal
+My friend name is  Arun
+My friend name is  Vikash
+My friend name is  Chandra
+My friend name is  Imran
+My friend name is  Manish
+My friend name is  Ian
+My friend name is  Hari
+
+7. Create a list(family_members) with your family members names(atleaste 10 names)?
+print all names with in loop 
+Programme:
+family_members=["Zah","Zak","Rok","Afzal","Zub","Nas","Zam","Shah","Zain"]
+for p in family_members:
+                print(p)
+Output:
+Zah
+Zak
+Rok
+Afzal
+Zub
+Nas
+Zam
+Shah
+Zain
+
+8. Create a list(food_names) with your favorite food names(atleaste 10 names only veg)?
+print all names with in loop 
+
+programme:
+food_names=["Briyani","Roti","Chicken","Mandi","Tandoori","Haleem","Harees","Marg","Sahwarma","Kabab"]
+for p in food_names:
+    print(p)
+output:
+Briyani
+Roti
+Chicken
+Mandi
+Tandoori
+Haleem
+Harees
+Marg
+Sahwarma
+Kabab
+
+9. Create a tuple(food_names) with your favorite food names(atleaste 10 names only nonveg)?
+print all names with in loop 
+programme:
+food_names=("Briyani","Roti","Chicken","Mandi","Tandoori","Haleem","Harees","Marg","Sahwarma","Kabab")
+for p in food_names:
+    print(p)
+output:
+Briyani
+Roti
+Chicken
+Mandi
+Tandoori
+Haleem
+Harees
+Marg
+Sahwarma
+Kabab
+
+
+10. Create a set(colour_names) with your colour names(atleaste 10 names)?
+print all names with in loop 
+
+programmes:
+colour_names={"Red","Red","Blue","Green","Yellow","White","Orange","Black","Green",}
+for p in colour_names:
+    print(p)
+Output:
+Red
+Green
+Black
+Orange
+Yellow
+White
+Blue
+
+11. Create a list(month_names) with your month names(atleaste 10 names)?
+print all names with in loop 
+programme:
+month_names=["Jan","Feb","Mar","Apr","May","Jun","July","Aug","Sep","Oct","Nov","Dec"]
+for p in month_names:
+    print(p)
+Output:
+Jan
+Feb
+Mar
+Apr
+May
+Jun
+July
+Aug
+Sep
+Oct
+Nov
+Dec
+
+
+12. print 9th table (1 to 90)
+
+Programme:
+for p in range(1,90,9):
+    x=p-1
+    print(x)
+
+Output:
+0
+9
+18
+27
+36
+45
+54
+63
+72
+81
+
+13. print(12th table (1 to 120)
+
+programme:
+for p in range(1,120,12):
+    x=p-1
+    print(x)
+
+Output:
+0
+12
+24
+36
+48
+60
+72
+84
+96
+108

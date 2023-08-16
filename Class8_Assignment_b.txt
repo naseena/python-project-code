@@ -1,0 +1,117 @@
+
+Exlore in google and create a document.
+
+1. What is excel file ?
+  excel is a spreadsheet program from microsoft and a component of its office product group for business applications.
+  
+2. Why we use excel file ?
+  microsoft excel enables users to format,organize and calculate data in a spread sheet.
+
+3. Difference between .xls and .xlsx file?
+  .xls:.xls uses the standard binary format.
+  .xlsx:.xlsx applies the update version that is based on the format of xml.
+
+
+
+Task: Create files and import in spyder and print data.
+
+1. Create a friend_names.xls file  (atleast 10 names, columns are FriendName,Quality)
+import pandas
+from pandas import read_csv,read_excel
+friends=pandas.read_excel(r"C:\Users\\hp\Documents\Trainee\nasheenazubair\nashhu_friends.xlsx",sheet_name='friendsquality')
+
+9]:friends 
+      name     quality 
+0  shabana         clvr
+1  mobeena  intelligent
+2  sabhiya       silent
+3  shaheda     innocent
+4   fatima       dancer
+5   gowsia       singer
+6  fazeela       writer
+7  muskaan        anger
+8   maahin         bold
+9   safiya         cool
+
+
+2. Create a family_members.xls file  (atleast 10 names, columns are FamilyMemberName*Relation)
+
+family=pandas.read_excel(r"C:\Users\\hp\Documents\Trainee\nasheenazubair\nashhu_friends.xlsx",sheet_name='familyrelation')
+
+  family  relation
+0    sule       dad
+1    razi       mom
+2    tabu      sis1
+3     irf      sis2
+4   zubbu     hubby
+5   suffi       bro
+6    zain       son
+7  aatika  daughter
+8     zam  broinlaw
+9     zah  sisinlaw
+
+3. Create a Vegfood_items.xlsx file  (atleast 10 names, columns are VegFoodName*Taste)
+veg=pandas.read_excel(r"C:\Users\\hp\Documents\Trainee\nasheenazubair\nashhu_friends.xlsx",sheet_name='vegfood')
+ vegfood          taste
+0       aalu fry          super
+1   muttor curry          salty
+2      gobi aalu          spicy
+3         paneer     milk taste
+4   paneer tikka          yummy
+5    aalu muttor          tasty
+6    gobi masala    masala flvr
+7  paneer masala  spicyness low
+8      aalu gobi       saltless
+9     bhendi fry         cooked
+4. Create a NonVegfood_items.xlsx file  (atleast 10 names, columns are NonVegFoodName*Taste)
+nonveg=pandas.read_excel(r"C:\Users\\hp\Documents\Trainee\nasheenazubair\nashhu_friends.xlsx",sheet_name='nonveg')
+nonveg
+  nonveg           taste
+0      chicken fry           yummy
+1       mutton fry           tasty
+2    mutton curry            super
+3  chicken biryani         amazing
+4   mutton biryani      very tasty
+5       chicken 65           spicy
+6           pulaav           salty
+7        egg curry       tasteless
+8         fish fry      overcooked
+9       fish curry  without masala
+
+5. Create a month_names.xlsx file (atleast 12 names, columns are MonthName*Season)
+months=pandas.read_excel(r"C:\Users\\hp\Documents\Trainee\nasheenazubair\nasheena_excel.xlsx")
+
+months
+  months  seasons
+0   january  winter 
+1       feb  winter 
+2     march   summer
+3     april   summer
+4       may   summer
+5      june   summer
+6      july  raining
+7       aug  raining
+8       sep  raining
+9       oct  raining
+10      nov  winter 
+11      dec  winter 
+
+
+6. Create a colours_names.xlsx file  (atleast 12 names, columns are colourName_in_English^colourName_in_Hindi^colourName_in_Telugu)
+
+colours=pandas.read_excel(r"C:\Users\\hp\Documents\Trainee\nasheenazubair\nasheena_excel.xlsx",sheet_name='clrnames')
+0    english   hindi     telugu
+1     red       laal     yerupu
+2    blue      neela     neelam
+3   green      haraa     pachha
+4    pink    gulaabi    gulaabi
+5   white     safaid     telupu
+6   black      kaala     nalupu
+7  orange    kashaye   kashayam
+8    grey     cement     cement
+9   brown  chocolate  chocolate
+
+
+
+
+

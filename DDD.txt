@@ -1,0 +1,175 @@
+*create DN table:
+create table DN(patientid int(150),membershid int(150),groupid int(20),person_nbr int(150))
+
+*CREATE DA table:
+create table DA (patientid int(150),membershid int(150),groupid int(20),person_nbr int(150),Primary_Phone_NBR varchar(20),Phone2_NBR varchar(20),Phone3_NBR varchar(20))
+
+
+*insert values in columns:DDD PATIENTS
+
+insert into DN(patientid,membershid,groupid,person_nbr)
+values (200001,	4456.162497,100,2748.280106),(200002,4456.162497,100,3983.633278),
+(200003	,4456.162497,100,5918.043203),(200004,4456.162497,100,5882.418134),
+(200005,4456.162497,100,3519.095855),(200006,4456.162497,100,6902.302935),
+(200007,4456.162497,100,4964.159886),(200008,4456.162497,100,2700.15556),
+(200009,4456.162497,100,3027.867187),(200010,4456.162497,100,1731.524002);
+
+*insert values in columns:DDD ADDRESS
+
+insert into DA(patientid,membershid,groupid,person_nbr,Primary_Phone_NBR,Phone2_NBR,Phone3_NBR)
+values(200001,4456.162497,100,2748.280106,"C","O","C"),
+(200002,4456.162497,100,3983.633278,"C","O","C"),
+(200003,4456.162497,100,5918.043203,"C","O","C"),
+(200004,4456.162497,100,5882.418134,"C","O","C"),
+(200005,4456.162497,100,3519.095855,"C","O","C"),
+(200006,4456.162497,100,6902.302935,"C","O","C"),
+(200007,4456.162497,100,4964.159886,"C","O","C"),
+(200008,4456.162497,100,2700.15556,"C","O","C"),
+(200009,4456.162497,100,3027.867187,"C","O","C"),
+(200010,4456.162497,100,1731.524002,"C","O","C");
+
+*JOIN operation DN and DA(left join):
+
+select DN.*,DA.Primary_Phone_NBR,DA.Phone2_NBR,DA.Phone3_NBR
+from DN left join DA
+on DN.patientid=DA.patientid and DN .membershid=DA.membershid and DN.groupid=DA.groupid and DN.person_nbr=DA.person_nbr
+
+*join table name:
+
+create table DN_DA_JOIN as
+select DN.*,DA.Primary_Phone_NBR,DA.Phone2_NBR,DA.Phone3_NBR
+from DN left join DA
+on DN.patientid=DA.patientid and DN .membershid=DA.membershid and DN.groupid=DA.groupid and DN.person_nbr=DA.person_nbr
+
+  30 rows sql table
+
+*create DN table:
+create table DN(patientid int(150),membershid int(150),groupid int(20),person_nbr int(150))
+
+insert into DN(patientid,membershid,groupid,person_nbr)
+values (200001,	4456.162497,100,2748.280106),(200002,4456.162497,100,3983.633278),
+(200003	,4456.162497,100,5918.043203),(200004,4456.162497,100,5882.418134),
+(200005,4456.162497,100,3519.095855),(200006,4456.162497,102,6902.302935),
+(200007,4456.162497,102,4964.159886),(200008,4456.162497,102,2700.15556),
+(200009,4456.162497,102,3027.867187),(200010,4456.162497,102,1731.524002),
+(200011,4456.162497,103,3276.203417),(200012,4456.162497,103,4921.232625),
+(200013,56.162497,103,6305.987664),(200014,4456.162497	,103,2958.595516),
+(200015,4456.162497,105,2726.349719),(200016,4456.162497,105,9730.431104),
+(200017,4456.162497,105,2597.02431),(200018,4456.162497,105,7932.082937),
+(200019,4456.162497,106,2637.33179),(200020,4456.162497,106,5224.188779),
+(200021,4456.162497,106,7949.397906),(200022,4456.162497,106,4956.048292),
+(200023,4456.162497,107,418.5762415),(200024,4456.162497,107,6388.536609),
+(200025,4456.162497,107,2898.200259),(200026,4456.162497,107,2700.450732),
+(200027,4456.162497,108,7911.30561),(200028,4456.162497,108,4155.503806),
+(200029,4456.162497,108,706.232301),(200030,4456.162497,108,4700.528991);
+
+
+*CREATE DA table:
+create table DA (patientid int(150),membershid int(150),groupid int(20),person_nbr int(150),Primary_Phone_NBR varchar(20),Phone2_NBR varchar(20),Phone3_NBR varchar(20))
+
+insert into DA(patientid,membershid,groupid,person_nbr,	Primary_Phone_NBR,Phone2_NBR,Phone3_NBR)
+values (200001,	4456.162497,100,2748.280106,"C","O","C"),(200002,4456.162497,100,3983.633278,"C","O","C"),
+(200003	,4456.162497,100,5918.043203,"C","O","C"),(200004,4456.162497,100,5882.418134,"C","O","C"),
+(200005,4456.162497,100,3519.095855,"C","O","C"),(200006,4456.162497,102,6902.302935,"O","H","C"),
+(200007,4456.162497,102,4964.159886,"O","H","C"),(200008,4456.162497,102,2700.15556,"O","H","C"),
+(200009,4456.162497,102,3027.867187,"O","H","C"),(200010,4456.162497,102,1731.524002,"H","C"," "),(200011,4456.162497,103,3276.203417,"H","C"," "),(200012,4456.162497,103,4921.232625,"H","C"," "),(200013,56.162497,103,6305.987664,"H","C"," "),
+(200014,4456.162497	,103,2958.595516," ","O","C"),
+(200015,4456.162497,105,2726.349719," ","O","C"),
+(200016,4456.162497,105,9730.431104," ","O","C"),
+(200017,4456.162497,105,2597.02431," ","O","C"),
+(200018,4456.162497,108	,7932.082937," ","O","C"),
+(200019,4456.162497	,106,2637.33179,"H"," ","C"),(200020,4456.162497,106,5224.188779,"H"," ","C"),
+(200021,4456.162497	,106,7949.397906,"H"," ","C"),(200022,4456.162497,106,4956.048292,"H"," ","C"),
+(200023,4456.162497,107,418.5762415,"H"," ","C"),(200024,4456.162497,107,6388.536609,"O","H","C"),
+(200025,4456.162497,107,2898.200259,"O","H","C"),(200026,4456.162497,107,2700.450732,"O","H","C"),
+(200027,4456.162497,108,7911.30561," ","O","H"),
+(200028,4456.162497,108,4155.503806," ","O","C"),
+(200029,4456.162497,108	,706.232301,"C","C","C"),(200030,4456.162497,108,4700.528991,"C","C","C");
+
+
+
+*join operation for  DN left join DA:
+
+create table DN_DA_JOIN as
+select DN.*,DA.Primary_Phone_NBR,DA.Phone2_NBR,DA.Phone3_NBR
+from DN left join DA
+on DN.patientid=DA.patientid and DN .membershid=DA.membershid and DN.groupid=DA.groupid and DN.person_nbr=DA.person_nbr
+
+*CREATE TABLE FLAG:
+CREATE TABLE FLAG (groupid int(20),Flag varchar(150))
+
+INSERT INTO FLAG (groupid,Flag)
+VALUES (100,"EarD"),(102,"EyesD"),(103,"Nervers"),(105,"KneeF"),(106,"SpineF"),(107,"Obesity"),(108,"Obesity-II")
+
+*join 0peration for  DN_DA_JOIN LEFT JOIN FLAG:
+
+create table DN_DA_F_JOIN as
+select DN_DA_JOIN.*,FLAG.Flag
+from  DN_DA_JOIN LEFT JOIN FLAG
+on DN_DA_JOIN.groupid=FLAG.groupid
+
+*remove groupid column in DN_DA_F_JOIN:
+
+ALTER TABLE DN_DA_F_JOIN
+DROP COLUMN groupid
+
+*rename flag into groupid in DN_DA_F_JOIN :
+
+ALTER TABLE DN_DA_F_JOIN
+RENAME Flag  TO groupid ;
+
+*create empty cellflag colum in  DN_DA_F_JOIN:
+
+alter table DN_DA_F_JOIN
+add CELL_FLAG varchar(150)
+
+*update cellflag p,primnmbr==c:
+
+update DN_DA_F_JOIN
+set CELL_FLAG=="P"
+where Primary_Phone_NBR	=="C"
+
+*update cellflag S,primnmbr!=c,PRMRNMBR2=C:
+	
+update DN_DA_F_JOIN
+set CELL_FLAG=="S"
+where Primary_Phone_NBR!="C" and Phone2_NBR=="C"
+
+*update cellflag S,primnmbr!=c,PRMRNMBR2!=C,PRM3=C:
+
+update DN_DA_F_JOIN
+set CELL_FLAG=="S"
+where Primary_Phone_NBR!="C" and Phone2_NBR!="C" and Phone3_NBR=="C"
+
+*update cellflag N,primnmbr!=c,PRMRNMBR2=C:
+	
+update DN_DA_F_JOIN
+set CELL_FLAG=="N"
+where Primary_Phone_NBR!="C" and Phone2_NBR=="C"
+
+*update cellflag N,primnmbr!=c,PRMRNMBR2!=C,PRM3=C:
+
+update DN_DA_F_JOIN
+set CELL_FLAG=="N"
+where Primary_Phone_NBR!="C" and Phone2_NBR!="C" and Phone3_NBR	=="C"
+
+*COUNT cellflag column p,S,N:
+
+SELECT COUNT(CELL_FLAG)
+FROM DN_DA_F_JOIN
+WHERE CELL_FLAG=="P"
+
+SELECT COUNT(CELL_FLAG)
+FROM DN_DA_F_JOIN
+WHERE CELL_FLAG=="S"
+
+SELECT COUNT(CELL_FLAG)
+FROM DN_DA_F_JOIN
+WHERE CELL_FLAG=="N"
+
+*flag column add:
+
+alter table DN_DA_F_JOIN
+add FLAG varchar(250)
+
+

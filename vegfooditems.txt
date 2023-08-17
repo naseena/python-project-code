@@ -1,0 +1,11 @@
+Vegfood|taste
+Aalufry|super
+Bhendifry|tasty
+Gobimasala|salty
+Paneerpalak|spicy
+Gobipaneer|overcooked
+Brinjalcurry|tasteless
+Paneermasala|saltless
+Pulihaara|sour
+Bajji|0ily
+Carrotfry|sweet

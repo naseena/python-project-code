@@ -1,0 +1,11 @@
+nonveg|taste
+chickenfry|yummy
+muttonfry|tasty
+muttoncurry|super
+chickenbiryani|amazing
+muttonbiryani|very tasty
+chicken65|spicy
+pulaav|salty
+eggcurry|tasteless
+fishfry|overcooked
+fishcurry|without masala

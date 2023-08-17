@@ -1,0 +1,11 @@
+english^hindi^telugu
+yellow^peela^pasupu
+red^laal^yerupu
+blue^neela^neelam
+green^haraa^pachha
+pink^gulaabi^gulaabi
+white^safaid^telupu
+black^kaala^nalupu
+orange^kashaye^kashayam
+grey^cement^cement
+brown^chocolate^chocolate

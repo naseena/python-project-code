@@ -1,0 +1,13 @@
+months&seasons
+january&winter 
+feb&winter 
+march&summer
+april&summer
+may&summer
+june&summer
+july&raining
+aug&raining
+sep&raining
+oct&raining
+nov&winter 
+dec&winter 

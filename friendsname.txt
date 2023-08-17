@@ -1,0 +1,11 @@
+name,quality 
+shabana,clvr
+mobeena,intelligent
+sabhiya,silent
+shaheda,innocent
+fatima,dancer
+gowsia,singer
+fazeela,writer
+muskaan,anger
+maahin,bold
+safiya,cool

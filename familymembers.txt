@@ -1,0 +1,11 @@
+family*relation
+sule*dad
+razi*mom
+tabu*sis1
+irf*sis2
+zubbu*hubby
+suffi*bro
+zain*son
+aatika*daughter
+zam*broinlaw
+zah*sisinlaw
